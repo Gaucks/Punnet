@@ -1,0 +1,132 @@
+/***********************************************/
+/*! text-shadow: 1px 1px 2px rgba(0,0,0,0.2);  */
+/***********************************************/
+
+@font-face {
+    font-family: 'walkway_blackregular';
+    src: url('type/Walkway_Black-webfont.eot');
+    src: url('type/Walkway_Black-webfont.eot?#iefix') format('embedded-opentype'),
+         url('type/Walkway_Black-webfont.woff') format('woff'),
+         url('type/Walkway_Black-webfont.ttf') format('truetype'),
+         url('type/Walkway_Black-webfont.svg#walkway_blackregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+html, body { height: 100%; }
+
+body{
+	font-family: "lucida grande", Helvetica, arial, sans-serif;
+	font-size: 13px;
+	line-height: 1.5em;
+	color: #FFF
+}
+
+h1 { font-size: 1.5em; color: #FFF  }
+h2 { font-size: 1.25em; color: #FFF }
+h3 { font-size: 1.1em; color: #FFF  }
+h4 { font-size: 0.9em; color: #FFF  }
+
+.clear{ clear:both }
+
+#site{
+	min-height: 100%;
+	background-color: #3d3d3d;
+}
+
+#header{
+	min-height: 200px;
+	border: 1px solid transparent;
+	border-top: none;
+	border-bottom: 1px solid #333;
+	box-shadow: inset 0px 39px 86px 24px rgba(0,0,0,.39), 0 -1px 1px #FFF, 0 1px 0 #333;
+	outline: 0;
+	padding-top: 100px;
+}
+
+	#header_box{ 
+		width: 1000px;
+		margin: 0 auto;
+		text-align: center;
+	}
+	
+	#header_box h1{ 
+		font-family: 'walkway_blackregular', Helvetica, serif;  
+		font-size: 6em;
+		letter-spacing: 0.9em;
+		color: #666;
+		text-shadow: 1px 1px 2px #000;
+		margin-right:  -0.9em;
+	}
+
+#subheader{
+	background-color: #62b6e2;
+}
+
+	#subheader .content{
+		width: 1000px;
+		margin: 0 auto;
+		font-style: italic;
+		text-align: center;
+		padding: 20px;
+		color: #FFF;
+		text-shadow: 1px 1px 2px #000;
+	}
+
+#content{ 
+	background-color: #FFF;
+}
+
+	.accueil{ 
+		width: 1000px;
+		margin: 0 auto;
+		padding: 50px;
+		text-align: center;
+	}
+	
+	.accueil input[type="text"] {
+		width: 300px;
+		background-color: #666;
+		border: 1px solid transparent;
+		border-bottom: 1px solid #DDD;
+		box-shadow: inset 0 1px 2px rgba(0,0,0,.39), 0 -1px 1px #FFF, 0 1px 0 #FFF;
+		outline: 0;
+		padding: 10px 6px 10px 10px;
+		display: block;
+		margin: 0 auto;
+		margin-bottom: 5px;
+		color: #FFF;
+	}
+	
+	.accueil input[type="submit"]{
+		width: 318px;
+		background: #32a7e0;
+		border-radius: 3px;
+		border: none;
+		color: #fff;
+		padding: 10px;
+		display: inline-block;
+		-webkit-font-smoothing: antialiased;
+		text-transform: uppercase;	
+		font-weight: bold;
+	}
+	
+#footer{}
+
+	#footer_box{ 
+		width: 1000px;
+		margin: 0 auto;
+		text-align: center;
+		padding-top: 100px;
+	}
+	
+	#footer_box h2{
+		font-family: 'walkway_blackregular', Helvetica, serif;  
+		font-size: 2em;
+		letter-spacing: 0.4em;
+		color: #666;
+		text-shadow: 1px 1px 2px #000;
+		margin-right: -0.4em;
+	}

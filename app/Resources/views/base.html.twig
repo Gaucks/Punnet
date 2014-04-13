@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}Punnet !{% endblock %}</title>
+        {% block stylesheets %}
+        {% stylesheets filter='cssrewrite' 
+        		'bundles/punnetsite/css/reset.css' 
+        		'bundles/punnetsite/css/style.css' 
+        		'bundles/punnetsite/css/content.css' 
+        		'bundles/punnetsite/css/annonce.css'
+        		'bundles/punnetsite/css/region.css'
+        		'bundles/punnetsite/css/depot.css'
+        %}
+        <link rel="stylesheet" href="{{ asset_url }}" type="text/css" />
+        {% endstylesheets %}
+        {% endblock %}
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    </head>
+    <body>
+
+<!------------------------------->
+<!--! DEBUT DU SITE 
+<!------------------------------->
+    	<div id="site">
+<!------------------------------->
+<!--! DEBUT DU HEADER DU SITE   -->
+<!------------------------------->
+        	<div id="header">
+        		<div id="header_box">
+        			<h1 id="title">Punnet</h1>	<!-- TITRE DU SITE-->
+        		</div>
+<!------------------------------->
+<!-- BOX RECHERCHE DU SITE
+<!------------------------------->
+					{% if accueil is not defined %}
+        			<div id="header_box_search">
+        				<fieldset>
+							<input type="text" id="search" name="" placeholder="Rechercher une personne ..."/>
+							<input type="submit" id="search_btn" value="Go" />
+        				</fieldset>
+					</div>
+					{% endif %}
+<!-------------------------------------->
+<!--! BOX DE GAUCHE POUR RETOUR HOMEPAGE
+<!-------------------------------------->
+						<div id="header_box_login_home_ico">
+	        				<a href="{{ path('punnet_homepage') }}" alt="Homepage" />
+	        				<img src="{{ asset('bundles/punnetsite/images/user_ico.png') }}" class="" alt="Une image" />
+	        				</a>
+	        			</div>
+<!---------------------------------->
+<!--! AFFICHAGE DU MENU DU HAUT 
+<!---------------------------------->
+        	<div id="header_box_login">
+    			<ul id="login">
+    				{% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+    				<li class="login"><a href="{{ path('fos_user_registration_register') }}" alt="" class="" />
+	    				Kris
+	    				</a>
+    				</li>
+    				<li class="login"><a href="{{ path('fos_user_security_logout') }}" alt="" class="" />Déconnexion</a></li>
+    				<li class="login">
+    					<img src="{{ asset('bundles/punnetsite/images/no_avatar.png') }}" id="user_head_avatar" alt="Une image" />
+    				</li>
+    				{% else %}
+    				<li class="login">
+    					<a href="{{ path('fos_user_registration_register') }}" alt="" class="access" />Inscription</a>
+    				</li>
+					<li class="login">
+					 	<a href="{{ path('fos_user_security_login') }}" alt="" class="access_red" /> Connexion </a>
+					</li>
+    				{% endif %}
+    			</ul>
+        	</div>
+<!------------------------------->
+<!--! FIN DU MENU DU HAUT  
+<!------------------------------->
+        	</div> <!-- FIN DU HEADER DU SITE -->
+        	
+        	
+        	<div id="box_content"> <!-- DEBUT DU BOX_CONTENT --->
+        	
+        	<!------------------------------->
+<!--! AFFICHAGE DU MENU DE GAUCHE
+<!------------------------------->
+        		{{ render(controller('PunnetSiteBundle:Site:Menu')) }}
+<!-------------------------------------------->
+<!--! AFFICHAGE DU HEADER DU CONTENU DE DROITE 
+<!-------------------------------------------->
+        	<div id="content">
+        	
+        		<!------------------------------------>
+				<!--! Module de recherche avancer  -->
+				<!------------------------------------>
+
+        		<div id="adv_search">
+        			{{ include('PunnetSiteBundle:Site:adv_search.html.twig') }}
+        		</div>
+        		
+        		<!------------------------------------>
+				<!--! header relatif à la page à afficher  -->
+				<!------------------------------------>
+        		<div id="content_header">
+				{{ include('PunnetSiteBundle:Site:Region/content_header.html.twig') }}
+        		</div>	
+<!------------------------------------------->
+<!--! AFFICHAGE DU CONTENU DES PAGES DEMANDÉES
+<!------------------------------------------->
+				{% block body %}{% endblock %}
+				</div> <!-- FIN DU BOX_CONTENT --->
+			</div> <!-- FIN DE LA DIV CONTENT -->
+			
+			<div id="footer">
+        		<div id="footer_box">&copy Copyright Punnet 2014 - Faq - Contact - Plan</div>
+        	</div>
+    	</div> <!-- FIN DE LA DIV SITE -->
+    	
+<!------------------------------->
+<!--! CODE JAVASCRIPTS
+<!------------------------------->
+        {% block javascripts %}{% endblock %}
+    </body>
+</html>

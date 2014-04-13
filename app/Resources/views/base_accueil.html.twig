@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}Punnet !{% endblock %}</title>
+        {% block stylesheets %}
+        {% stylesheets filter='cssrewrite' 'bundles/punnetsite/css/reset.css' 'bundles/punnetsite/css/accueil.css' %}
+        <link rel="stylesheet" href="{{ asset_url }}" type="text/css" />
+        {% endstylesheets %}
+        {% endblock %}
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    </head>
+    <body>
+    	<div id="site">
+        	<div id="header">
+        		<div id="header_box">
+        			<h1>Punnet</h1>	
+        		</div>
+        	</div>
+        	<div id="content">
+				{% block body %}{% endblock %}
+			</div>
+        	<div id="footer">
+        		<div id="footer_box">
+        			
+        			 <h2 id="foot-mess">
+        			 {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+        			 	<a href="{{ path('punnet_showRegion') }}" alt="" class="access" />
+	        			 	<img src="{{ asset('bundles/punnetsite/images/no_avatar.png') }}" id="avatar" alt="Une image" />
+	        			 	Bienvenue {{ app.user.username }}, accédez à votre espace.
+					 	</a>
+        			 {% else %}
+        			 	<a href="{{ path('fos_user_registration_register') }}" alt="" class="access" />Inscription</a> 
+        			 	<span id="access">/</span>
+					 	<a href="{{ path('fos_user_security_login') }}" alt="" class="access_red" /> Connexion </a>
+        			{% endif %}
+        			
+        			 </h2>
+        		</div>
+        	</div>
+    	</div>
+        {% block javascripts %}{% endblock %}
+    </body>
+</html>

@@ -1,0 +1,23 @@
+punnet_homepage:
+    pattern:  /
+    defaults: { _controller: PunnetSiteBundle:Site:accueil }
+    
+punnet_comingsoon:
+    pattern:  /coming-soon
+    defaults: { _controller: PunnetSiteBundle:Site:comingSoon }
+
+punnet_showAnnonce:
+    pattern:  /show-annonce
+    defaults: { _controller: PunnetSiteBundle:Site:showAnnonce }
+
+punnet_showRegion:
+    pattern:  /show-region
+    defaults: { _controller: PunnetSiteBundle:Site:showRegion }
+
+punnet_showUser:
+    pattern:  /show-user
+    defaults: { _controller: PunnetSiteBundle:Site:showUser }
+
+punnet_depot:
+    pattern:  /depot
+    defaults: { _controller: PunnetSiteBundle:Site:depotAnnonce }

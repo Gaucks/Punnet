@@ -1,0 +1,40 @@
+#ann_content{
+	margin-left: 10px;
+}
+
+#ann_box{
+	text-align: justify;
+	border-bottom: 1px solid #ccc;
+	padding-bottom: 30px;
+	margin-right: 340px;
+}
+	h1#titre{ margin-bottom: 5px; }
+	
+	span#datetime{ margin-bottom: 20px; display: inline-block; font-style: italic; }
+	
+	span#tarif{
+		font-size: 1.5em;
+		color: #c86552;
+		margin-bottom: 10px;
+		display: inline-block;
+		font-weight: bold;
+	}
+
+#ann_img_box{
+	width: 300px;
+	float: right;
+	text-align: center;
+	margin: 0 20px;
+	min-height: 500px;
+}
+#ann_img{
+	border: 5px solid #CCC;
+	width: 300px;
+	height: 300px;
+	text-align: center;
+}
+
+	#ann_img img#picture{
+		max-width: 300px;
+		max-height: 300px;
+	}

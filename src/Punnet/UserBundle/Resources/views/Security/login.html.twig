@@ -1,0 +1,43 @@
+{% extends "::base_fos.html.twig" %}
+
+{% trans_default_domain 'FOSUserBundle' %}
+
+{% block body %}
+
+<div id="user">
+
+{% if error %}
+    <div>{{ error|trans }}</div>
+{% endif %}
+
+ <div id="login_box">
+ 
+ 	<h1 id="title">Identification</h1>
+		<h2 id="subtitle">Revenez nous voir</h2>
+		
+	<form action="{{ path("fos_user_security_check") }}" method="post">
+	    <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+	
+	    <label for="username" class="login_label">{{ 'security.login.username'|trans }}</label>
+	    <input type="text" id="username" class="signin" name="_username" value="{{ last_username }}" required="required" />
+		
+	    <label for="password" class="login_label">{{ 'security.login.password'|trans }}</label>
+	    <input type="password" id="password" class="signin" name="_password" required="required" />
+
+	    <input type="checkbox" class="login_label" class="signin" id="remember_me" name="_remember_me" value="on" />
+	    <label for="remember_me" class="login_label_rm">{{ 'security.login.remember_me'|trans }}</label>
+	    <br/>
+	
+	    <input type="submit" id="_submit" name="_submit" class="signin_sub" value="{{ 'security.login.submit'|trans }}" />
+	    <span><a href="{{ path('punnet_homepage') }}" alt="" id="forget"/>Mot de passe oublié ?</a></span>
+	    
+    
+	</form>
+ </div>
+ 
+  <div id="sub_registration_box">
+    	<h3 id="subtitle_sub">Pas encore membre ?</h3>
+    	<a href="{{ path('fos_user_registration_register') }}" alt="" class="" /><input type="button" class="connect" name="" value="Rejoignez nous"/></a>
+    </div>
+</div>
+{% endblock body %}

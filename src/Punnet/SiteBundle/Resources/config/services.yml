@@ -1,0 +1,7 @@
+parameters:
+#    punnet_site.example.class: Punnet\SiteBundle\Example
+
+services:
+#    punnet_site.example:
+#        class: %punnet_site.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

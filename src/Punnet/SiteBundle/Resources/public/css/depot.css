@@ -1,0 +1,125 @@
+#profile{
+	margin-left: -20px;
+	text-indent: 20px;
+}
+
+#profile_box{
+	padding: 10px 10px 5px 10px;
+	border-left: 5px solid #CCC;
+	margin-left: 10px;
+}
+
+#profile_box h1#title{
+	font-family: 'walkway_blackregular', Helvetica, serif;  
+	letter-spacing: 0.5em;
+	color: #666;
+	margin-right:  -0.5em;
+	margin-bottom: 20px;
+	font-size: 2em;
+	padding-bottom: 5px;
+	border-bottom: 5px solid #CCC
+}
+
+#profile_box h2#subtitle{
+	font-family: 'walkway_blackregular', Helvetica, serif;
+	letter-spacing: 0.1em;
+	margin-left: 145px;
+	margin-bottom: 10px;
+}
+
+#profile_box label.profile{ color: #32a7e0;width: 130px; display: inline-block; line-height: 1.7em; float: left}
+	
+	#profile_box input[type="text"], input[type="email"], input[type="password"] {
+		width: 450px;
+		border: 1px solid transparent;
+		outline: 0;
+		padding: 5px 6px 5px 10px;
+		color: #333;
+		background: #FDFDFD;
+		border: 1px solid #aaa;
+		border-radius: 4px;
+		margin-bottom: 5px;
+	}
+	
+	#profile_box_head input[type="text"].price{
+		width: 80px;
+		border: 1px solid transparent;
+		outline: 0;
+		padding: 5px 6px 5px 10px;
+		color: #333;
+		background: #FDFDFD;
+		border: 1px solid #aaa;
+		border-radius: 4px;
+	}
+	
+	#profile_box textarea{
+		width: 450px;
+		height: 100px;
+		border: 1px solid transparent;
+		outline: 0;
+		padding: 5px 6px 5px 10px;
+		margin: 0 auto;
+		color: #333;
+		background: #FDFDFD;
+		border: 1px solid #aaa;
+		border-radius: 4px;
+		margin-bottom: 5px;
+	}
+	
+	#profile_box input[type="checkbox"]{
+		background: #FDFDFD;
+		border: 1px solid #aaa;
+	}
+	
+#profile_box_head{
+	border-bottom: 1px solid #CCC;
+	padding: 20px 0 10px 0;
+	display: inline-block;	
+}
+
+#profile_box_content{
+	border-bottom: 1px solid #CCC;
+	padding: 20px 0 10px 0;
+	display: inline-block;	
+}
+
+#sub_registration_box{
+	width: 350px;
+	margin: 0 auto;
+	margin-top: 20px;
+	display: inline-block;
+}
+
+#sub_registration_box input[type="button"].connect{
+		font-weight: bold;
+		background: #FFF;
+		border-radius: 3px;
+		padding: 6px 30px;
+		border: none;
+		color: #333;
+		-webkit-font-smoothing: antialiased;
+		border: 1px solid #aaa;
+}
+
+#sub_registration_box input[type="button"].connect:hover{
+	background: #DDD;
+}
+
+#sub_registration_box h3#subtitle_sub{
+	display: inline-block;
+	margin-right: 20px;
+	color: #333;
+}
+	
+	#profile_box input[type="submit"]{
+		background: #c86552;
+		border-radius: 3px;
+		border: none;
+		color: #fff;
+		padding: 7px 30px;
+		-webkit-font-smoothing: antialiased;
+		font-weight: bold;	
+		text-shadow: 1px 1px 2px #000;
+		margin-left: 145px;
+	}
+	

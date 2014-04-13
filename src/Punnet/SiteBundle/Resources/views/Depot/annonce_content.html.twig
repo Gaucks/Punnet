@@ -1,0 +1,44 @@
+<div id="profile">
+
+	<form action="{{ path('fos_user_registration_register') }}" {{ form_enctype(form) }} method="POST" class="fos_user_registration_register">
+	
+	
+	<div id="profile_box">
+		
+		<h1 id="title">Ajouter une annonce</h1>
+		
+		<div id="profile_box_head">
+		
+		<div>
+			<label class="profile">{{ form_label(form.title) }}</label>
+			{{ form_widget(form.title) }}
+		</div>
+		
+		<div>
+			<label class="profile">{{ form_label(form.description) }}</label>
+			{{ form_widget(form.description) }}
+		</div>
+		
+		<div>
+			<label class="profile">{{ form_label(form.price) }}</label>
+			{{ form_widget(form.price) }}
+		</div>
+		
+		</div>
+		
+		<div id="profile_box_content">
+			<div>
+			<label class="profile">{{ form_label(form.ville) }}</label>
+			{{ form_widget(form.ville) }}
+		</div>
+		</div>
+		
+		
+		<div>
+			<input type="submit" value="Valider" />
+		</div>
+		
+		
+    </div>
+
+</div>

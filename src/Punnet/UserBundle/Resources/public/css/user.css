@@ -1,0 +1,238 @@
+.reg_error{ margin-left: 150px;margin-bottom: 5px ;color: red; font-style: italic}
+
+#content_user{
+	
+}
+
+#user{
+	margin: 0 auto;
+	width: 700px;
+}
+
+.registration_box{
+	padding: 10px 10px 5px 10px;
+	margin-top: 50px;
+	padding-bottom: 40px;
+	border-bottom: 1px solid #aaa;
+}
+
+#user h1#title{
+	font-family: 'walkway_blackregular', Helvetica, serif;  
+	letter-spacing: 0.5em;
+	color: #666;
+	margin-right:  -0.5em;
+	margin-bottom: 20px;
+	margin-left: 145px;	
+	font-size: 2em;
+}
+
+#user h2#subtitle{
+	font-family: 'walkway_blackregular', Helvetica, serif;
+	letter-spacing: 0.1em;
+	margin-left: 145px;
+	margin-bottom: 30px;
+}
+
+.registration_box label.registration{ width: 130px; border:none; display: inline-block; line-height: 1.7em;}
+
+	.registration_box input.signup {
+		width: 450px;
+		border: 1px solid transparent;
+		outline: 0;
+		padding: 5px 6px 5px 10px;
+		display: inline-block;
+		margin: 0 auto;
+		color: #333;
+		font-style: italic;
+		background: #FDFDFD;
+		border: 1px solid #aaa;
+		border-radius: 4px;
+		margin-bottom: 5px;
+	}
+	
+	#user input[type="checkbox"]{
+		margin-left: 10px;
+		margin-bottom: 20px;
+		background: #FDFDFD;
+		border: 1px solid #aaa;
+	}
+
+#sub_registration_box{
+	width: 350px;
+	margin: 0 auto;
+	margin-top: 20px;
+}
+
+#sub_registration_box input[type="button"].connect{
+		font-weight: bold;
+		background: #FFF;
+		border-radius: 3px;
+		padding: 6px 30px;
+		border: none;
+		color: #333;
+		-webkit-font-smoothing: antialiased;
+		border: 1px solid #aaa;
+}
+
+#sub_registration_box input[type="button"].connect:hover{
+	background: #DDD;
+}
+
+#sub_registration_box h3#subtitle_sub{
+	display: inline-block;
+	margin-right: 20px;
+	color: #333;
+}
+	
+	.registration_box input[type="submit"].sign_sub{
+		background: #c86552;
+		border-radius: 3px;
+		border: none;
+		color: #fff;
+		padding: 7px 30px;
+		-webkit-font-smoothing: antialiased;
+		font-weight: bold;	
+		text-shadow: 1px 1px 2px #000;
+		margin-left: 135px;
+	}
+
+
+
+/*****************************/
+/*! partie d'identification  */
+/*****************************/
+
+#login_box{
+	padding: 10px 10px 5px 10px;
+	margin-top: 50px;
+	padding-bottom: 40px;
+	border-bottom: 1px solid #aaa;
+}
+
+#login_box label.login_label{ width: 130px; border:none; display: inline-block; line-height: 1.7em; }
+#login_box label.login_label_rm{ border:none; display: inline-block; line-height: 1.7em;}
+
+#login_box input.signin {
+		width: 450px;
+		border: 1px solid transparent;
+		outline: 0;
+		padding: 5px 6px 5px 10px;
+		display: inline-block;
+		margin: 0 auto;
+		color: #333;
+		font-style: italic;
+		background: #FDFDFD;
+		border: 1px solid #aaa;
+		border-radius: 4px;
+		margin-bottom: 5px;
+	}
+	
+#login_box input[type="submit"].signin_sub{
+		background: #c86552;
+		border-radius: 3px;
+		border: none;
+		color: #fff;
+		padding: 7px 30px;
+		-webkit-font-smoothing: antialiased;
+		font-weight: bold;	
+		text-shadow: 1px 1px 2px #000;
+		margin-left: 145px;
+		margin-right: 10px;
+	}
+
+#login_box input[type="checkbox"].login_label{
+		margin-left: 135px;
+		margin-bottom: 20px;
+		background: #FDFDFD;
+		border: 1px solid #aaa;
+		display: inline-block
+	}
+
+#login_box a#forget{
+	color: #32a7e0;
+	font-style: italic;
+}
+
+#login_box a#forget:hover{
+	color: #333;
+}
+/*******************/
+/*! la validation  */
+/*******************/
+
+div.checked{
+	display: inline-block;
+	margin-left: 10px;
+}
+
+	div.checked span.false{
+		color: red
+	}
+	
+	div.checked span.true{
+		color: green;
+	}
+
+#reg_conf{
+	width: 1000px;
+	min-height: 500px;
+	text-align: center;
+	margin: 0 auto;
+	margin-top: 50px;
+	border-bottom: 1px solid #CCC;
+}
+
+	#reg_conf h1#title{
+		padding-top: 200px;
+		font-family: 'walkway_blackregular', Helvetica, serif;  
+		letter-spacing: 0.1em;
+		color: #666;
+		margin-right:  -0.5em;
+		font-size: 2em;
+	}
+
+/************************/
+/*! EDITION DU PROFILE  */
+/************************/
+
+#pfl_edit{
+	width: 700px;
+}
+
+#pfl_edit h2.pfl_etape{
+	font-family: 'walkway_blackregular', Helvetica, serif;
+	letter-spacing: 0.1em;
+	margin: 20px 0 20px 0;
+}	
+
+#pfl_edit label.profile_edit{
+	width: 150px;
+	float: left;
+	font-weight: normal;
+	display: inline-block;
+	margin: 5px 0 5px 0;
+}
+
+	#pfl_edit input.profile{
+		margin: 0 0 5px 0;
+	}
+	
+	#pfl_edit select.profile_select{
+		width: 467px;
+		height: 25px;
+		border: 1px solid #ccc;
+		margin: 0 auto;
+		color: #333;
+		background: #fff;
+		margin-bottom: 5px;
+	}
+	
+	#pfl_edit input[type="submit"].pfl-submit{
+		margin: 0 auto;
+		margin-left: 130px;
+		margin-top: 10px;
+	}
+
+
+
+

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}Punnet !{% endblock %}</title>
+        {% block stylesheets %}
+        {% stylesheets filter='cssrewrite' 'bundles/punnetsite/css/reset.css' 'bundles/punnetsite/css/comingsoon.css' %}
+        <link rel="stylesheet" href="{{ asset_url }}" type="text/css" />
+        {% endstylesheets %}
+        {% endblock %}
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    </head>
+    <body>
+    	<div id="site">
+        	<div id="header">
+        		<div id="header_box">
+        			<h1>Punnet</h1>	
+					
+        		</div>
+        	</div>
+        	<div id="subheader">
+        		<div class="content">
+        			<h2>Tenez-vous informé de l'avancé de Punnet en indiquant votre adresse email.</h2>
+        		</div>
+        	</div>
+        	<div id="content">
+				{% block body %}{% endblock %}
+			</div>
+        	<div id="footer">
+        		<div id="footer_box"><h2>Coming soon</h2></div>
+        	</div>
+    	</div>
+        {% block javascripts %}{% endblock %}
+    </body>
+</html>

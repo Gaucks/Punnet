@@ -1,0 +1,74 @@
+{% trans_default_domain 'FOSUserBundle' %}
+<div id="profile">
+
+	<div id="profile_box">
+		
+		<h1 id="title">Modification du profile</h1>
+		
+	<div id="pfl_edit">	
+	
+	<form action="{{ path('fos_user_profile_edit') }}" {{ form_enctype(form) }} method="POST" class="fos_user_profile_edit">
+	    
+	    <h2 class="pfl_etape">1 - Votre compte</h2>
+				
+					<fieldset id="profile_field">
+
+								<div class="error">{{ form_errors(form.email) }}</div>
+								<label class="profile_edit">{{ form_label(form.email) }}</label>
+								{{ form_widget(form.email) }}
+
+								<div class="error">{{ form_errors(form.username) }}</div>
+								<label class="profile_edit">{{ form_label(form.username) }}</label>
+								{{ form_widget(form.username) }}
+								
+								<div class="error">{{ form_errors(form.current_password) }}</div>
+								<label class="profile_edit">Mot de passe:</label>
+								{{ form_widget(form.current_password) }}
+					
+				<h2 class="pfl_etape">2 - Votre localisation</h2>
+
+								<div class="error">{{ form_errors(form.region) }}</div>
+								<label class="profile_edit">{{ form_label(form.region) }}</label>
+								{{ form_widget(form.region) }}
+								
+								<div class="error">{{ form_errors(form.departement) }}</div>
+								<label class="profile_edit">{{ form_label(form.departement) }}</label>
+								{{ form_widget(form.departement) }}
+
+
+								<div class="error">{{ form_errors(form.ville) }}</div>
+								<label class="profile_edit">{{ form_label(form.ville) }}</label>
+								{{ form_widget(form.ville) }}
+								
+				<h2 class="pfl_etape">3 - Votre localisation</h2>
+				
+								<div class="error">{{ form_errors(form.email) }}</div>
+								<label class="profile_edit">Email:</label>
+								<input type="text" class="profile" name="" />
+
+								<div class="error">{{ form_errors(form.username) }}</div>
+								<label class="profile_edit">Nom d'utilisateur</label>
+								<input type="text" class="profile" name="" />
+								
+								<div class="error">{{ form_errors(form.current_password) }}</div>
+								<label class="profile_edit">Nom d'utilisateur</label>
+								<input type="text" class="profile" name="" />
+								
+								<div class="error">{{ form_errors(form.email) }}</div>
+								<label class="profile_edit">Email:</label>
+								<input type="text" class="profile" name="" />
+								
+					</fieldset>
+	    
+	    
+	    
+	    
+	    <div>
+	        <input type="submit" value="{{ 'profile.edit.submit'|trans }}"  class="pfl-submit"/>
+	    </div>
+	</form>
+</div>
+
+	</div>
+</div>
+

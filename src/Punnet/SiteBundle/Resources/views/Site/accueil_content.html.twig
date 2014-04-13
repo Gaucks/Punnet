@@ -1,0 +1,32 @@
+
+<div class="accueil">
+	
+	<div id="post">
+		<a href="{{ path('punnet_depot') }}" alt="" /><input type="button" class="button" name="" value="Déposer votre annonce" /></a>
+	</div>
+	
+	<div id="acc_search">
+		<input type="text" id="search"  placeholder="Moteur de recherche"/>
+		<input type="text" id="postal" name="" placeholder="Code Postal" />
+		<input type="submit" value="Rechercher" />
+	</div>
+	
+	<div id="acc_box_left">
+		<h3>Selectionnez une région:</h3>
+		<ul class="region">
+			{% for r in regions %}
+			<li class="region"><a href="{{ path('punnet_homepage') }}" alt="" class="acc"/>- {{ r.region }}</a></li>
+			{% endfor %}
+			
+			<div class="clear"></div>
+		</ul>
+	<a href="{{ path('punnet_showRegion') }}" alt="" /><input type="button" value="Toutes les régions" ></a>
+	</div>
+	
+	<div id="acc_box_right">
+		<img src="{{ asset('bundles/punnetsite/images/carte.png') }}" class="carte" alt="Une image" />
+	</div>
+	
+	<div class="clear"></div>
+
+</div>
