@@ -78,7 +78,6 @@ input[type="submit"],input[type="button"]{ cursor: pointer }
 	background: #FFF;
 	color: #333;
 	margin: 0 auto;
-	max-width: 1600px;
 }
 
 /************/
@@ -259,7 +258,8 @@ input[type="submit"],input[type="button"]{ cursor: pointer }
 /****************/
 
 #box_content{
-
+	margin: 0 auto;
+	/* max-width: 1400px; Si on veut réduire la page centrale */
 }
 
 #content{
