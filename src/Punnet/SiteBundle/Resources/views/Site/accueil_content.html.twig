@@ -12,7 +12,7 @@
 	</div>
 	
 	<div id="acc_box_left">
-		<h3>Selectionnez une région:</h3>
+		<h2>Selectionnez une région:</h2>
 		<ul class="region">
 			{% for r in regions %}
 			<li class="region"><a href="{{ path('punnet_homepage') }}" alt="" class="acc"/>- {{ r.region }}</a></li>
@@ -28,5 +28,37 @@
 	</div>
 	
 	<div class="clear"></div>
+	
+	<div id="sub">
+		<div class="sub_box">
+			<h2 class="sub-headtitle">Etape 1</h2>
+			<h3 class="sub-title">Créer votre compte </h3>
+			<p class="sub-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt </p>
+			<input type="button" id="sub_etp1" value="Inscription"/>
+		</div>
+		
+		<div class="sub_box">
+			<h2 class="sub-headtitle">Etape 2</h2>
+			<h3 class="sub-title">Poster votre annonce </h3>
+			<p class="sub-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt </p>
+			<input type="button" id="sub_etp2" value="Poster une annonce"/>
+		</div>
+		
+		<div class="sub_box">
+			<h2 class="sub-headtitle">Etape 3</h2>
+			<h3 class="sub-title">Vender votre bien </h3>
+			<p class="sub-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt </p>
+			<input type="button" id="sub_etp3" value="C'est partit"/>
+		</div>
+		
+		<div class="sub_box">
+			<h2 class="sub-headtitle">Etape 4</h2>
+			<h3 class="sub-title">Gérér votre boutique</h3>
+			<p class="sub-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt </p>
+			<input type="button" id="sub_etp4" value="Ma boutique"/>
+		</div>
+		
+		<div class="clear"></div>
+	</div>
 
 </div>
