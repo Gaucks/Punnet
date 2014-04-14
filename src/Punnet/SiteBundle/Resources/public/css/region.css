@@ -3,9 +3,10 @@
 /**********/
 
 #region_menu{
+	background: #FFF;
+	min-height: 600px;
 	padding-top: 10px;
 	float: left;
-	min-height: 300px;
 	width: 180px;
 	padding-right: 10px;
 	border-right: 5px solid #ccc;
@@ -42,20 +43,6 @@
 		font-weight: bold;
 		margin-left: 15px;
 		}
-		
-#region_usr_menu{
-	
-}
-
-	#region_usr_menu ul.row{
-		
-	}
-	
-	#region_usr_menu li.row{
-		border-bottom: 1px solid #ccc;
-		padding: 6px 10px;
-		margin-right: -10px;
-	}
 
 /************/
 /*! FOOTER  */
