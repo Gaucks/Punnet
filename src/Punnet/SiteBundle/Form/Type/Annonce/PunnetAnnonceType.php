@@ -6,6 +6,8 @@ use Punnet\SiteBundle\Form\Annonce\AnnonceType;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Component\Form\FormEvent;
+use Symfony\Component\Form\FormEvents;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 
 class PunnetAnnonceType extends AnnonceType
@@ -17,19 +19,35 @@ class PunnetAnnonceType extends AnnonceType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-             ->add('title', 'text', array('attr' => array( 
-            											  'placeholder' => 'Le titre de l\'annonce',
-														  'label'		=> 'Titre'
+             ->add('title', 'text', array('label'		=> 'Titre de l\'annonce', 'attr' => array( 
+            											  'placeholder' => 'Un titre explicite est simple attire plus de monde...',
             											 )) )
             ->add('description')
-            ->add('price', 'text', array('attr' => array( 
+            ->add('price', 'text', array('label'		=> 'Tarif','attr' => array( 
             											  'placeholder' => '1000€',
-														  'label'		=> 'Tarif',
 														  'class'		=> 'price'
             											 )) )
-            ->add('ville');
-        
-        $builder
+            ->add('region','entity',array('required'		 	=> FALSE,
+	            												   'class' 	        	=> 'PunnetSiteBundle:Region\Region',
+																   'property' 	   		=> 'Region',
+																   'label' 		   		=> 'Région:',
+																   'empty_value'   		=> 'Choisissez votre Region...', 
+															       'attr'		   		=> array('class' => 'locale')
+															   ))
+			->add('departement','entity', array('required'		 	=> FALSE,
+	            												   'class' 	        	=> 'PunnetSiteBundle:Departement\Departement',
+																   'property' 	   		=> 'departement',
+																   'label' 		   		=> 'Département:',
+																   'empty_value'   		=> 'Choisissez votre département...', 
+															       'attr'		   		=> array('class' => 'locale')
+															   ))												
+            ->add('ville','entity', array('required'		 	=> FALSE,
+	            												   'class' 	        	=> 'PunnetSiteBundle:Ville\Ville',
+																   'property' 	   		=> 'ville',
+																   'label' 		   		=> 'Ville:',
+																   'empty_value'   		=> 'Choisissez votre ville...', 
+															       'attr'		   		=> array('class' => 'locale')
+															   ))
         	->remove('date')
         	->remove('updated');
         

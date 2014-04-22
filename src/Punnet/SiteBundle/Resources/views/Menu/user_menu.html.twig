@@ -1,19 +1,50 @@
 <div id="user_menu">
+
 	<div id="user_rep_id">
 		<img src="{{ asset('bundles/punnetsite/images/photo.jpg') }}" class="avatar" alt="User Avatar" />
-		<h4 id="rep_ownername">{{ app.user.username }}</h4>
-		<input type="button" class="button" value="S'abonner" />
-		<div class="clear"></div>
+		<h4 id="user_ownername">{{ app.user.username }} Gautier</h4>
+		<p class="profil"><a href="{{ path('fos_user_profile_edit') }}" alt="" class="link"/>Modifier mon profil</a></p>
 	</div>
+	
 	<div id="owner_usr_menu">
 			<ul class="row">
-				<li class="row">Trier par date</li>
-				<li class="row">Trier par prix</li>
-				<li class="row">Trier par catégorie</li>
+				<li class="row">
+					<a href="{{ path('punnet_showUserAnnonce') }}" alt="" class="link"/>
+					<img src="{{ asset('bundles/punnetsite/images/icones/Gear.png') }}" class="menu_ico" alt="Icones" />
+					Mes annonces</a>
+				</li>
+				<li class="row">
+					<a href="{{ path('punnet_showUserAnnonce') }}" alt="" class="link" />
+					<img src="{{ asset('bundles/punnetsite/images/icones/E-Mail.png') }}" class="menu_ico" alt="Icones" />
+					Ma Punnet Box</a>
+				</li>
+				<li class="row">
+					<a href="{{ path('punnet_showUserAnnonce') }}" alt="" class="link"/>
+					<img src="{{ asset('bundles/punnetsite/images/icones/RemoteDesktop.png') }}" class="menu_ico" alt="Icones" />
+					Mes abonnements
+					</a>
+				</li>
+				
+				<li class="row">
+					<a href="{{ path('punnet_showUserAnnonce') }}" alt="" class="link"/>
+					<img src="{{ asset('bundles/punnetsite/images/icones/Gear.png') }}" class="menu_ico" alt="Icones" />
+					Mes abonnés</a>
+				</li>
+				<li class="row">
+					<a href="{{ path('punnet_showUserAnnonce') }}" alt="" class="link"/>
+					<img src="{{ asset('bundles/punnetsite/images/icones/E-Mail.png') }}" class="menu_ico" alt="Icones" /> 
+					Mon profil</a>
+				</li>
+				<li class="row">
+					<a href="{{ path('punnet_showUserAnnonce') }}" alt="" class="link" />
+					<img src="{{ asset('bundles/punnetsite/images/icones/RemoteDesktop.png') }}" class="menu_ico" alt="Icones" />
+					Statistiques</a>
+				</li>
 			</ul>
 		</div>
 		
 		<div class="center">
 			<a href="{{ path('punnet_depot') }}" alt="" /><input type="button" id="new" value="Nouvelle annonce" /></a>
 		</div>	
+	
 </div>

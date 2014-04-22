@@ -21,3 +21,11 @@ punnet_showUser:
 punnet_depot:
     pattern:  /depot
     defaults: { _controller: PunnetSiteBundle:Site:depotAnnonce }
+
+punnet_showUserBord:
+    pattern:  /bord
+    defaults: { _controller: PunnetSiteBundle:Bord:showUserBord }
+
+punnet_showUserAnnonce:
+    pattern:  /bord/show-annonce
+    defaults: { _controller: PunnetSiteBundle:Bord:showUserAnnonce }

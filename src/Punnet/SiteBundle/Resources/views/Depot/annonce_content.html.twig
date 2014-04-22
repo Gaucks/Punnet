@@ -4,11 +4,10 @@
 	
 	
 	<div id="profile_box">
-		
 		<h1 id="title">Ajouter une annonce</h1>
+		<h2 class="pfl_etape">1 - Votre compte</h2>
 		
 		<div id="profile_box_head">
-		
 		<div>
 			<label class="profile">{{ form_label(form.title) }}</label>
 			{{ form_widget(form.title) }}
@@ -26,19 +25,42 @@
 		
 		</div>
 		
+		<h2 class="pfl_etape">2 - Catégorie</h2>
+
+		<div id="profile_box_cat">
+			<div>
+				<label class="profile">Categorie</label>
+				<select class="cat"><option>Categorie</option></select>
+			</div>
+			
+			<div>
+				<label class="profile">Sous cat</label>
+				<input type="text" class="" name="" />
+			</div>
+	</div>
+		
+		<h2 class="pfl_etape">3 - Votre localisation</h2>
+		
 		<div id="profile_box_content">
 			<div>
-			<label class="profile">{{ form_label(form.ville) }}</label>
-			{{ form_widget(form.ville) }}
+				<label class="profile">{{ form_label(form.region) }}</label>
+				{{ form_widget(form.region) }}
+			</div>
+			
+			<div>
+				<label class="profile">{{ form_label(form.departement) }}</label>
+				{{ form_widget(form.departement) }}
+			</div>
+			
+			<div>
+				<label class="profile">{{ form_label(form.ville) }}</label>
+				{{ form_widget(form.ville) }}
+			</div>
+			
 		</div>
-		</div>
-		
 		
 		<div>
 			<input type="submit" value="Valider" />
 		</div>
-		
-		
-    </div>
 
 </div>

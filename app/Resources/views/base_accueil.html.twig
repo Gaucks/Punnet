@@ -27,7 +27,7 @@
         			
         			 <h2 id="foot-mess">
         			 {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
-        			 	<a href="{{ path('punnet_showRegion') }}" alt="" class="access" />
+        			 	<a href="{{ path('punnet_showUserBord') }}" alt="" class="access" />
 	        			 	<img src="{{ asset('bundles/punnetsite/images/no_avatar.png') }}" id="avatar" alt="Une image" />
 	        			 	Bienvenue {{ app.user.username }}, accédez à votre espace.
 					 	</a>

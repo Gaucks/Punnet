@@ -1,0 +1,104 @@
+/* css/bord/userannonce.css */
+
+#usr-annonce{
+	float: left;
+	width: 100%;
+}
+
+#usr-annonce h1#title{
+	font-family: 'walkway_blackregular', Helvetica, serif;  
+	letter-spacing: 0.5em;
+	color: #666;
+	margin-right:  -0.5em;
+	margin-bottom: 5px;
+	font-size: 2em;
+	padding-bottom: 5px;
+	border-bottom: 5px solid #CCC
+}
+
+ul.head-ann-top{
+	background: #3D3D3D;
+	border: 2px solid #DFDFDF;
+}
+
+#usr-annonce li{
+	padding: 8px 4px;
+	border: 1px solid #b9b9b9;
+	border-left: 0 none;
+	border-top: none;
+	text-align: center;
+	display: inline-block;
+	float: left;
+}
+
+li.head-ann_id{
+	background: #d1d1d1 url('../../images/bg_menu.gif');
+	font-family: 'walkway_blackregular', Helvetica, serif;
+	letter-spacing: 0.1em;
+	color: #c86552;
+	white-space: nowrap;
+	line-height: 16px;
+	text-shadow: #fff 0 1px 1px;
+	width: 10%
+}
+
+li.head-ann_title{
+	background: #d1d1d1 url('../../images/bg_menu.gif');
+	font-family: 'walkway_blackregular', Helvetica, serif;
+	letter-spacing: 0.1em;
+	color: #c86552;
+	white-space: nowrap;
+	line-height: 16px;
+	text-shadow: #fff 0 1px 1px;
+	width: 34%;
+}
+
+li.head-ann_date{
+	background: #d1d1d1 url('../../images/bg_menu.gif');
+	font-family: 'walkway_blackregular', Helvetica, serif;
+	letter-spacing: 0.1em;
+	color: #c86552;
+	white-space: nowrap;
+	line-height: 16px;
+	text-shadow: #fff 0 1px 1px;
+	width: 10%
+}
+
+li.head-ann_opt{
+	background: #d1d1d1 url('../../images/bg_menu.gif');
+	font-family: 'walkway_blackregular', Helvetica, serif;
+	letter-spacing: 0.1em;
+	color: #c86552;
+	white-space: nowrap;
+	line-height: 16px;
+	text-shadow: #fff 0 1px 1px;
+	width: 10%
+}
+/* list de contenu */
+
+li.ct-ann_id{
+	background: #FFF;
+	width: 10%;
+	min-width: 50px;
+}
+
+li.ct-ann_title{
+	background: #FFF;
+	color: #32a7e0;
+	width: 34%;
+}
+
+li.ct-ann_date{
+	background: #FFF;
+	width: 10%;
+	min-width: 100px;
+}
+
+li.ct-ann_opt{
+	background: #FFF;
+	width: 10%;
+	min-width: 90px;
+}
+
+span.green{ color: green; font-weight: bold; }
+span.red{ color: red; font-weight: bold; }

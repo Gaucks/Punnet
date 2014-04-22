@@ -19,32 +19,40 @@ a:hover{ color: yellow }
 
 
 input::-webkit-input-placeholder {
-	color: #76726d;
+	color: #999;
+	font-style: italic
 
 }
 input::-moz-placeholder {
-	color: #76726d;
+	color: #999;
+	font-style: italic
 
 }
 input:-moz-placeholder {   /* Older versions of Firefox */
-	color: #76726d;
+	color: #999;
+	font-style: italic
 
 }
 input:-ms-input-placeholder { 
-	color: #76726d;
+	color: #999;
+	font-style: italic
 }
 
 textarea::-webkit-input-placeholder {
-	color: #76726d;
+	color: #999;
+	font-style: italic
 }
 textarea::-moz-placeholder {
-	color: #76726d;
+	color: #999;
+	font-style: italic
 }
 textarea:-moz-placeholder {   /* Older versions of Firefox */
-	color: #76726d;
+	color: #999;
+	font-style: italic
 }
 textarea:-ms-input-placeholder { 
-	color: #76726d;
+	color: #999;
+	font-style: italic
 }
 
 /******************/
@@ -67,7 +75,7 @@ h4 { font-size: 0.9em; color: #32a7e0  }
 
 input{ font-size: 1em; }
 input[type="submit"],input[type="button"]{ cursor: pointer }
-.clear{ clear:both }
+div.clear{ clear:both }
 
 /**********/
 /*! SITE  */
@@ -111,7 +119,6 @@ input[type="submit"],input[type="button"]{ cursor: pointer }
 	
 	#header_box_login{
 		float: left;
-		width: 200px;
 		margin-top: -17px;
 	}
 	
@@ -171,6 +178,15 @@ input[type="submit"],input[type="button"]{ cursor: pointer }
 		border-right: 1px solid #666;
 		text-shadow: 1px 1px 2px #000;
 		
+	}
+	
+	#header_box_login li.region-menu{
+		color: #c86552;
+		display: inline-block;
+		padding: 0 10px;
+		border-right: 1px solid #666;
+		text-shadow: 1px 1px 2px #000;
+		
 	}	
 	
 	#header_box_login img#user_head_avatar{
@@ -180,80 +196,7 @@ input[type="submit"],input[type="button"]{ cursor: pointer }
 		margin-bottom: -5px;
 	}
 	
-/**********/
-/*! MENU  */
-/**********/
 
-#user_menu{
-	background: #FFF;
-	float: left;
-	min-height: 800px;
-	width: 180px;
-	padding-right: 10px;
-	border-right: 5px solid #ccc;
-}
-
-#user_rep_id{
-	border-bottom: 1px solid #ccc;
-	padding-bottom: 5px;
-}
-	#user_rep_id img.avatar{
-		float: left;
-		width: 57px;
-		height: 57px;
-	}
-	
-	#user_rep_id h4#rep_ownername{
-		margin-left: 67px;
-		word-break: break-word;
-		padding-top: 5px;
-		font-weight: bold;
-		color: #32a7e0;
-		margin-bottom: 5px;
-	}
-	
-	#user_menu input[type="button"].button{
-		background: #32a7e0;
-		float: left;
-		border-radius: 3px;
-		padding: 6px 10px;
-		border: none;
-		color: #fff;
-		-webkit-font-smoothing: antialiased;
-		text-transform: uppercase;	
-		font-weight: bold;
-		margin-left: 10px;
-		}
-
-#owner_usr_menu{
-	
-}
-
-	#owner_usr_menu ul.row{
-		
-	}
-	
-	#owner_usr_menu li.row{
-		border-bottom: 1px solid #ccc;
-		padding: 6px 10px;
-		margin-right: -10px;
-	}
-
-.center{
-	margin-top: 20px;
-	text-align: center;
-}
-	div.center input[type="button"]#new{
-		-webkit-font-smoothing: antialiased;	
-		font-weight: bold;
-		background: #c86552;
-		border-radius: 3px;
-		padding: 6px 10px;
-		border: none;
-		color: #fff;
-		-webkit-font-smoothing: antialiased;
-		font-weight: bold;
-		}
 /****************/
 /*! Le contenu  */
 /****************/
@@ -261,10 +204,11 @@ input[type="submit"],input[type="button"]{ cursor: pointer }
 #box_content{
 	margin: 0 auto;
 	/* max-width: 1400px; Si on veut réduire la page centrale */
+	/* background: #e1e8ed */
 }
 
 #content{
-	margin-left: 190px;
+	margin-left: 200px;
 	padding: 10px;
 }
 

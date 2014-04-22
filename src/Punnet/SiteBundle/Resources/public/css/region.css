@@ -3,18 +3,18 @@
 /**********/
 
 #region_menu{
-	background: #FFF;
 	min-height: 600px;
 	padding-top: 10px;
 	float: left;
 	width: 180px;
 	padding-right: 10px;
 	border-right: 5px solid #ccc;
+	margin-left: 10px;
 }
 
 #region_rep_id{
+	height: 80px;
 	border-bottom: 1px solid #ccc;
-	padding-bottom: 5px;
 }
 	#region_rep_id img.avatar{
 		float: left;
@@ -43,6 +43,7 @@
 		font-weight: bold;
 		margin-left: 15px;
 		}
+
 
 /************/
 /*! FOOTER  */

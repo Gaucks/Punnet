@@ -57,6 +57,12 @@ class SiteController extends Controller
     	}
 	    	$annonce = new Annonce;
 	    	
+	    	$user	= $securityContext->getToken()->getUser();
+	    	
+	    	$annonce = $annonce->setDepartement($user->getDepartement())
+	    					   ->setRegion($user->getRegion())
+	    					   ->setVille($user->getVille());
+	    	
 			$form = $this->createForm(new PunnetAnnonceType(), $annonce);
 	    	
 		   return $this->render('PunnetSiteBundle:Depot:annonce.html.twig', array('form' => $form->createView(), 'depot' => TRUE));

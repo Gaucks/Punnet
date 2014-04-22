@@ -1,0 +1,213 @@
+#panel{
+	border-left: 5px solid #ccc;
+	margin-left: -10px;
+	padding-left: 5px;
+}
+
+#panel_content{
+
+}
+
+#panel_content h2.etape{
+	background: #d1d1d1 url('../images/bg_menu.gif');
+	font-family: 'walkway_blackregular', Helvetica, serif;
+	letter-spacing: 0.1em;
+	color: #c86552;
+	margin: 0px 0 10px 0px;
+	padding: 8px 4px;
+	white-space: nowrap;
+	line-height: 16px;
+	text-shadow: #fff 0 1px 1px;
+	border: 1px solid #b9b9b9;
+	border-left: 0 none;
+	text-indent: 10px;
+	border-radius: 4px 4px 0 0;
+}
+
+
+/* Contenu du panel de gauche */
+#pnl_ct_left_box{ float: left;}
+
+#pnl_ct_left{
+	background: #FFF;
+	width: 490px;
+	border: 1px solid #DFDFDF;
+	border-radius: 8px;
+	margin: 0 10px 10px 0;
+}
+
+
+.box-pnl-ann{
+	border-bottom: 1px solid #DFDFDF;
+	padding: 5px 10px;
+}
+
+.box-pnl-ann:hover{
+	background: #e1e8ed;
+}
+.box-pnl-ann-left{
+	float: left;
+	width: 380px;
+	display: inline-block;
+	cursor: pointer;
+}
+
+div.ann_options{
+	float: right;
+	width: 90px;
+	padding-top: 2px;
+}
+
+.box-pnl-ann-left img.pic{
+	width: 50px;
+	height: 50px;
+	border-radius: 8px;
+	float: left;
+	margin-right: 10px;
+}
+
+.box-pnl-ann-left h3.ann_title{ float: left; }
+
+.box-pnl-ann-left ul.ann_desc{ float: left; }
+
+.ann_options li.option{ margin-bottom: 5px;}
+
+.ann_options span.ann_price{
+		display: inline-block;
+		width: 80px;
+		text-align: center;
+		padding: 2px 10px 1px 10px;
+		color: #fff;
+		-webkit-font-smoothing: antialiased;	
+		font-weight: bold;
+		background: #c86552;
+	}
+	
+	.ann_options span.ann_request{
+		width: 80px;
+		display: inline-block;
+		text-align: center;
+		padding: 2px 10px 1px 10px;
+		color: #fff;
+		-webkit-font-smoothing: antialiased;	
+		font-weight: bold;
+		background: #569db1;
+	}
+
+/* CONTENU DES STATISTIQUES */
+#box-pnl-stats{}
+
+.box-pnl-stat{
+	background: #FFF;
+	border: 1px solid #DFDFDF;
+	border-radius: 8px;
+	width: 240px;
+	display: inline-block;
+	float: left;
+	margin-right: 10px;
+	text-align: center;	
+}
+
+.box-pnl-stat h1.number{
+	font-size: 2em;
+	font-weight: bold;
+	margin: 20px 0;
+}
+/* Contenu du panel de droite extensible */
+
+/* Contenu du statut */
+
+#pnl-statut{
+	border-bottom: 1px solid #DFDFDF;
+	margin-bottom: 5px;
+	padding-bottom: 5px;
+	margin: 0 10px;
+}
+
+#pnl-statut textarea#statut{
+	border: 1px solid #DFDFDF;
+	width: 96%;
+	padding: 10px 10px 0px 10px;
+	font-size: 1em;
+}
+
+#pnl-statut input.statut_sub{
+	background: #3d3d3d;
+	padding: 5px 15px 4px 15px;
+	border: 1px solid transparent;
+	border-top: none;
+	border-bottom: 1px solid #333;
+	box-shadow: inset 0px 0px 20px rgba(0,0,0,.39), 0 -1px 1px #FFF, 0 1px 0 #333;
+	outline: 0;
+	border-radius: 4px;
+	margin-bottom: 1px;
+	color: #FFF;
+}
+
+#pnl-statut span#carac-max{
+	color: #c86552;
+	font-style: italic;
+}
+
+#pnl_ct_right{
+	background: #FFF;
+	border: 1px solid #DFDFDF;
+	border-radius: 8px;
+	margin-left: 510px;
+}
+
+/* Contenu du wall */
+	.pnl-ct-right-box{
+		border-bottom: 1px solid #ccc;
+		padding: 10px 10px;
+		min-height: 50px;
+		cursor: pointer;
+	}
+	
+	.pnl-ct-right-box:hover{
+		background: #e1e8ed;
+		cursor: pointer;
+	}
+	
+	.pnl-ct-right-box-img{
+		float: left;
+		width: 60px;
+		height: 50px;
+	}
+	
+	.pnl-ct-right-box-img img.userpic{
+		width: 50px;
+		height: 50px;
+		margin-right: 10px;
+		border-radius: 8px;
+		
+	}
+	
+	.pnl-ct-right-box-content{
+		margin-left: 60px;
+	}
+	
+	.pnl-ct-right-box-content-head{
+		
+	}
+	.pnl-ct-right-box-content-head h3.username{
+		display: inline-block;
+	}
+	
+	.pnl-ct-right-box-content-head span.date{
+		float: right;
+		font-style: italic;
+	}
+	
+	.pnl-ct-right-box-content p.text{
+		margin-top: 5px;
+	}
+/* Fin du contenu du wall */
+
+#pnl_ct_bottom_box{
+	margin-top: 10px;
+	background: #FFF;
+	height: 50px;
+	border: 1px solid #DFDFDF;
+	border-radius: 8px;
+}

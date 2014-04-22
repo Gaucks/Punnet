@@ -11,6 +11,7 @@
         		'bundles/punnetsite/css/annonce.css'
         		'bundles/punnetsite/css/region.css'
         		'bundles/punnetsite/css/depot.css'
+        		'bundles/punnetsite/css/menu.css'
         %}
         <link rel="stylesheet" href="{{ asset_url }}" type="text/css" />
         {% endstylesheets %}
@@ -55,14 +56,15 @@
         	<div id="header_box_login">
     			<ul id="login">
     				{% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
-    				<li class="login"><a href="{{ path('fos_user_registration_register') }}" alt="" class="" />
-	    				Kris
+    				<li class="login"><a href="{{ path('punnet_showUserBord') }}" alt="" class="" />
+	    				{{ app.user.username }}
 	    				</a>
     				</li>
     				<li class="login"><a href="{{ path('fos_user_security_logout') }}" alt="" class="" />Déconnexion</a></li>
     				<li class="login">
-    					<img src="{{ asset('bundles/punnetsite/images/no_avatar.png') }}" id="user_head_avatar" alt="Une image" />
+    					<a href="{{ path('fos_user_profile_edit') }}" alt="" /><img src="{{ asset('bundles/punnetsite/images/no_avatar.png') }}" id="user_head_avatar" alt="Une image" /></a>
     				</li>
+    				<li class="region-menu"><a href="{{ path('punnet_showRegion') }}" alt="" class="access_red" />{{ app.user.region.region}}</a></li>
     				{% else %}
     				<li class="login">
     					<a href="{{ path('fos_user_registration_register') }}" alt="" class="access" />Inscription</a>
@@ -70,7 +72,9 @@
 					<li class="login">
 					 	<a href="{{ path('fos_user_security_login') }}" alt="" class="access_red" /> Connexion </a>
 					</li>
+					<li class="region-menu"><a href="{{ path('punnet_showRegion') }}" alt="" class="access_red" />Toutes les régions</a></li>
     				{% endif %}
+    				
     			</ul>
         	</div>
 <!------------------------------->

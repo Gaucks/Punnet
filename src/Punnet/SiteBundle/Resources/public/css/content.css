@@ -76,8 +76,6 @@
 	padding: 3px 10px;
 	font-style: italic;
 	font-weight: bold;
-	height: 20px;
-	background: #ccc;
-	border: 1px solid #eee;
-	line-height: 1.5em;
+	background: #fff;
+	border: 1px solid #ccc;
 }
