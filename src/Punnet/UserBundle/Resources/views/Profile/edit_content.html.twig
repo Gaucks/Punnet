@@ -5,6 +5,12 @@
 		
 		<h1 id="title">Modification du profile</h1>
 		
+		{% for flashMessage in app.session.flashbag.get('notice') %}
+		    <div class="flash-notice">
+		        {{ flashMessage }}
+		    </div>
+		{% endfor %}
+
 	<div id="pfl_edit">	
 	
 	<form action="{{ path('fos_user_profile_edit') }}" {{ form_enctype(form) }} method="POST" class="fos_user_profile_edit">
@@ -12,7 +18,7 @@
 	    <h2 class="pfl_etape">1 - Votre compte</h2>
 				
 					<fieldset id="profile_field">
-
+								
 								<div class="error">{{ form_errors(form.email) }}</div>
 								<label class="profile_edit">{{ form_label(form.email) }}</label>
 								{{ form_widget(form.email) }}
@@ -40,23 +46,37 @@
 								<label class="profile_edit">{{ form_label(form.ville) }}</label>
 								{{ form_widget(form.ville) }}
 								
-				<h2 class="pfl_etape">3 - Votre localisation</h2>
-				
-								<div class="error">{{ form_errors(form.email) }}</div>
-								<label class="profile_edit">Email:</label>
-								<input type="text" class="profile" name="" />
+				<h2 class="pfl_etape">3 - Votre identité</h2>
+								
+								<div class="error">{{ form_errors(form.firstname) }}</div>
+								<label class="profile_edit">{{ form_label(form.firstname) }}</label>
+								{{ form_widget(form.firstname) }}
+								
+								<div class="error">{{ form_errors(form.surname) }}</div>
+								<label class="profile_edit">{{ form_label(form.surname) }}</label>
+								{{ form_widget(form.surname) }}
 
-								<div class="error">{{ form_errors(form.username) }}</div>
-								<label class="profile_edit">Nom d'utilisateur</label>
-								<input type="text" class="profile" name="" />
+								<div class="error">{{ form_errors(form.phone) }}</div>
+								<label class="profile_edit">{{ form_label(form.phone) }}</label>
+								{{ form_widget(form.phone) }}
 								
-								<div class="error">{{ form_errors(form.current_password) }}</div>
-								<label class="profile_edit">Nom d'utilisateur</label>
-								<input type="text" class="profile" name="" />
+								<div class="error">{{ form_errors(form.showphone) }}</div>
+								<label class="profile_edit">{{ form_label(form.showphone) }}</label>
+								{{ form_widget(form.showphone) }}
 								
-								<div class="error">{{ form_errors(form.email) }}</div>
-								<label class="profile_edit">Email:</label>
-								<input type="text" class="profile" name="" />
+								<div class="error">{{ form_errors(form.description) }}</div>
+								<label class="profile_edit">{{ form_label(form.description) }}</label>
+								{{ form_widget(form.description) }}
+								
+				<h2 class="pfl_etape">4 - Votre avatar</h2>
+								
+								
+								<div class="error">{{ form_errors(form.file) }}</div>
+								<label class="profile_edit">{{ form_label(form.file) }}</label>
+								<div id="avatar_show"><img src="{{ asset('bundles/punnetsite/images/photo.jpg') }}" id="user_avatar" 									alt="User Avatar" />
+								{{ form_widget(form.file) }}</div>
+
+								
 								
 					</fieldset>
 	    

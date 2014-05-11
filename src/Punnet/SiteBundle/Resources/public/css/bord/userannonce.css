@@ -16,20 +16,20 @@
 	border-bottom: 5px solid #CCC
 }
 
+fieldset#showannonce{ border: 2px solid #DFDFDF; border-bottom: 5px solid #3D3D3D; border-radius: 10px; overflow: hidden }
+
 ul.head-ann-top{
-	background: #3D3D3D;
-	border: 2px solid #DFDFDF;
+	background: #d1d1d1 url('../../images/bg_menu.gif');
 }
 
 #usr-annonce li{
 	padding: 8px 4px;
-	border: 1px solid #b9b9b9;
-	border-left: 0 none;
-	border-top: none;
-	text-align: center;
-	display: inline-block;
+	border: none;
 	float: left;
+	display: inline-block
 }
+
+ul.head-ann-top{ text-align: center; }
 
 li.head-ann_id{
 	background: #d1d1d1 url('../../images/bg_menu.gif');
@@ -39,7 +39,18 @@ li.head-ann_id{
 	white-space: nowrap;
 	line-height: 16px;
 	text-shadow: #fff 0 1px 1px;
-	width: 10%
+	width: 5%;
+}
+
+li.head-ann_voir{
+	background: #d1d1d1 url('../../images/bg_menu.gif');
+	font-family: 'walkway_blackregular', Helvetica, serif;
+	letter-spacing: 0.1em;
+	color: #c86552;
+	white-space: nowrap;
+	line-height: 16px;
+	text-shadow: #fff 0 1px 1px;
+	width: 5%;
 }
 
 li.head-ann_title{
@@ -61,7 +72,7 @@ li.head-ann_date{
 	white-space: nowrap;
 	line-height: 16px;
 	text-shadow: #fff 0 1px 1px;
-	width: 10%
+	width: 9.9%
 }
 
 li.head-ann_opt{
@@ -72,33 +83,46 @@ li.head-ann_opt{
 	white-space: nowrap;
 	line-height: 16px;
 	text-shadow: #fff 0 1px 1px;
-	width: 10%
+	width: 10%;
 }
+
 /* list de contenu */
 
+
+ul.ct_ann{	  display: inline-block; background: #FFF; width: 100%; cursor: pointer; margin-bottom: -5px; text-align: center;}
+ul.ct_ann_grey{	display: inline-block;; background: #eee; width: 100%; cursor: pointer; margin-bottom: -5px; text-align: center;}
+
+
+ul.ct_ann:hover,ul.ct_ann_grey:hover{
+	display: inline-block;
+	background: #e1e8ed;
+}
+
 li.ct-ann_id{
-	background: #FFF;
-	width: 10%;
-	min-width: 50px;
+	width: 5%;
+}
+
+li.ct-ann_voir{
+	width: 5%;
+
 }
 
 li.ct-ann_title{
-	background: #FFF;
 	color: #32a7e0;
+	text-align: left;
+	text-indent: 20px;
 	width: 34%;
 }
 
 li.ct-ann_date{
-	background: #FFF;
-	width: 10%;
-	min-width: 100px;
+	width: 9.9%
 }
 
 li.ct-ann_opt{
-	background: #FFF;
 	width: 10%;
-	min-width: 90px;
 }
 
 span.green{ color: green; font-weight: bold; }
 span.red{ color: red; font-weight: bold; }
+a.bord_link:hover{ text-decoration: underline; color: #000;}
+#usr-annonce img.ico{ height: 20px; margin-bottom: -5px;}

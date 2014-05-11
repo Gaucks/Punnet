@@ -1,0 +1,28 @@
+
+
+<div id="region_menu">
+
+	<div id="region_rep_id">
+		<img src="{{ asset('bundles/uploads/img/') }}{{ annonceur.user.avatar }}" class="avatar"  alt="{{ annonceur.user.username }}" />
+		<h4 id="region_ownername">{{ annonceur.user.username }}</h4>
+		<input type="button" class="button" value="S'abonner" />
+	</div>
+	
+	<div id="region_menu_row">
+			<ul class="row">
+				<li class="row">Ville: {{ annonceur.ville.ville }}</li>
+				<li class="row">Contact: {{ annonceur.user.phone }}</li>
+				<li class="row">Evaluation : aucune</li>
+				<li class="row">Toutes ses annonces</li>
+				<li class="row">Afficher le profil</li>
+				<li class="row">Partager cette annonce</li>
+				<li class="row">Signaler cette annonce</li>
+			</ul>
+		</div>
+		
+		<div class="center">
+			<a href="{{ path('punnet_depot') }}" alt="" /><input type="button" id="new" value="Nouvelle annonce" /></a>
+		</div>	
+
+</div>
+

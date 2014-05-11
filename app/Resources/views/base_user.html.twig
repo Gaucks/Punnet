@@ -33,14 +33,18 @@
 <!------------------------------->
 <!-- BOX RECHERCHE DU SITE
 <!------------------------------->
-					{% if accueil is not defined %}
+					
+        			{#  
+        			{% if accueil is not defined %}
         			<div id="header_box_search">
         				<fieldset>
 							<input type="text" id="search" name="" placeholder="Rechercher une personne..."/>
 							<input type="submit" id="search_btn" value="Go" />
         				</fieldset>
 					</div>
-					{% endif %}
+					{% endif %} #}
+					
+					
 <!-------------------------------------->
 <!--! BOX DE GAUCHE POUR RETOUR HOMEPAGE
 <!-------------------------------------->
@@ -71,7 +75,11 @@
 					 	<a href="{{ path('fos_user_security_login') }}" alt="" class="access_red" /> Connexion </a>
 					</li>
     				{% endif %}
-    				<li class="region-menu"><a href="{{ path('punnet_showRegion') }}" alt="" class="access_red" />{{ app.user.region.region}}</a></li>
+    				{% if app.user.region.region is defined  %}
+						<li class="region-menu"><a href="{{ path('punnet_showRegion') }}" alt="" class="access_red" />{{ app.user.region.region}}</a></li>    				    
+    				    
+    				{% endif %}
+
     			</ul>
         	</div>
 <!------------------------------->
@@ -95,9 +103,9 @@
 <!------------------------------------------->
 				{% block body %}{% endblock %}
         	
+        	<div class="clear"></div>
 			</div> <!-- FIN DE LA DIV CONTENT -->
 			
-			<div class="clear"></div>
 			
 			</div> <!-- FIN DU BOX_CONTENT --->
         	

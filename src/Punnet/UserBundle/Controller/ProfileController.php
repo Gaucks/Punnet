@@ -80,7 +80,12 @@ class ProfileController extends ContainerAware
                 $userManager->updateUser($user);
 
                 if (null === $response = $event->getResponse()) {
-                    $url = $this->container->get('router')->generate('fos_user_profile_show');
+                	$this->container->get('session')->getFlashBag()
+                		 ->add('notice',
+                		 	   'Vos modifications ont bien été prise en compte.'
+						 	 );
+	            					 
+                    $url = $this->container->get('router')->generate('fos_user_profile_edit');
                     $response = new RedirectResponse($url);
                 }
 

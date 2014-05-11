@@ -135,7 +135,6 @@ div.clear{ clear:both }
 	
 	#header_box_search{
 		float: right;
-		margin-top: -20px;
 	}
 		#header_box_search fieldset{ 
 			background-color: #FFF;

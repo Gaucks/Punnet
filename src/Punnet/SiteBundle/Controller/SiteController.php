@@ -5,6 +5,7 @@ namespace Punnet\SiteBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Punnet\SiteBundle\Entity\Annonce\Annonce;
 use Punnet\SiteBundle\Form\Type\Annonce\PunnetAnnonceType;
+use Punnet\SiteBundle\Form\Handler\PunnetAnnonceHandler;
 
 class SiteController extends Controller
 {
@@ -20,6 +21,15 @@ class SiteController extends Controller
 		return $this->render('PunnetSiteBundle:Menu:menu.html.twig');
     }
     
+    // Affiche le menu
+    public function menuShowAnnonceAction($annonce)
+    {
+		$annonceur = $this->getDoctrine()->getManager()->getRepository('PunnetSiteBundle:Annonce\Annonce')->find($annonce);
+		
+		return $this->render('PunnetSiteBundle:Menu:menuShowAnnonce.html.twig', 
+												array('annonceur' => $annonceur));
+    }
+    
     // Affiche la page d'accueil
     public function accueilAction()
     {	
@@ -32,7 +42,7 @@ class SiteController extends Controller
     // Affiche l'annonce demandée
     public function showAnnonceAction()
     {
-	    return $this->render('PunnetSiteBundle:Site:Annonce/showAnnonce.html.twig', array('menu' => 'annonce'));
+	    return $this->render('PunnetSiteBundle:Site:Annonce/showAnnonce.html.twig', array('showannonce' => TRUE, 'annonce' => 1));
     }
     
     // Affiche la page d'accueil d'un utilisateur
@@ -45,27 +55,5 @@ class SiteController extends Controller
     public function showRegionAction()
     {
 		return $this->render('PunnetSiteBundle:Site:Region/showRegion.html.twig', array('menu' => 'region'));	
-	}
-    
-    // Affiche la page de dépose d'annonce
-    public function depotAnnonceAction()
-    {
-    	$securityContext = $this->container->get('security.context'); // Le conttroleur de sécurité
-    	
-    	if(!$securityContext->isGranted('IS_AUTHENTICATED_REMEMBERED')){
-    		return $this->redirect($this->generateUrl('fos_user_security_login'));
-    	}
-	    	$annonce = new Annonce;
-	    	
-	    	$user	= $securityContext->getToken()->getUser();
-	    	
-	    	$annonce = $annonce->setDepartement($user->getDepartement())
-	    					   ->setRegion($user->getRegion())
-	    					   ->setVille($user->getVille());
-	    	
-			$form = $this->createForm(new PunnetAnnonceType(), $annonce);
-	    	
-		   return $this->render('PunnetSiteBundle:Depot:annonce.html.twig', array('form' => $form->createView(), 'depot' => TRUE));
-    }
-    
+	}    
 }

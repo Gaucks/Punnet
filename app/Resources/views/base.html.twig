@@ -34,14 +34,17 @@
 <!------------------------------->
 <!-- BOX RECHERCHE DU SITE
 <!------------------------------->
-					{% if accueil is not defined %}
+					
+        			{#  
+        			{% if accueil is not defined %}
         			<div id="header_box_search">
         				<fieldset>
-							<input type="text" id="search" name="" placeholder="Rechercher une personne ..."/>
+							<input type="text" id="search" name="" placeholder="Rechercher une personne..."/>
 							<input type="submit" id="search_btn" value="Go" />
         				</fieldset>
 					</div>
-					{% endif %}
+					{% endif %} #}
+
 <!-------------------------------------->
 <!--! BOX DE GAUCHE POUR RETOUR HOMEPAGE
 <!-------------------------------------->
@@ -88,7 +91,12 @@
         	<!------------------------------->
 <!--! AFFICHAGE DU MENU DE GAUCHE
 <!------------------------------->
-        		{{ render(controller('PunnetSiteBundle:Site:Menu')) }}
+				{% if  showannonce %}
+				    {{ render(controller('PunnetSiteBundle:Site:MenuShowAnnonce', {'annonce' : annonce }) ) }}
+				{% else %}
+				    {{ render(controller('PunnetSiteBundle:Site:Menu')) }}
+				{% endif %}
+        		
 <!-------------------------------------------->
 <!--! AFFICHAGE DU HEADER DU CONTENU DE DROITE 
 <!-------------------------------------------->

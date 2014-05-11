@@ -1,97 +1,46 @@
+
 <div id="usr-annonce">
+
+{% for flashMessage in app.session.flashbag.get('notice') %}
+		    <div class="flash-notice">
+		        {{ flashMessage }}
+		    </div>
+		{% endfor %}
 
 	<h1 id="title">Vos annonces</h1>
 
+	<fieldset id="showannonce">
+	
 	<ul class="head-ann-top">
 		<li class="head-ann_id"	  >	Id		  </li>
+		<li class="head-ann_voir" >	Voir	  </li>
 		<li class="head-ann_title"> Titre	  </li>
 		<li class="head-ann_date" >	Date	  </li>
 		<li class="head-ann_opt"  >	Editer	  </li>
 		<li class="head-ann_opt"  >	Supprimer </li>
 		<li class="head-ann_opt"  >	Lecture	  </li>
 		<li class="head-ann_opt"  >	Statut	  </li>
-		
-		<li class="ct-ann_id"	>	01		  </li>
-		<li class="ct-ann_title"> 	Un titre d'annonce lamba	</li>
-		<li class="ct-ann_date" >	19/10/2014	  </li>
-		<li class="ct-ann_opt"  >	<span class="green">V </span> </li>
-		<li class="ct-ann_opt"  >	<span class="red">X </span> </li>
-		<li class="ct-ann_opt"  >	18 vues	  </li>
-		<li class="ct-ann_opt"  >	<span class="green">Vendu ! </span> </li>
-		
-		<li class="ct-ann_id"	>	02		  </li>
-		<li class="ct-ann_title"> 	Un titre d'annonce lamba	</li>
-		<li class="ct-ann_date" >	19/10/2014	  </li>
-		<li class="ct-ann_opt"  >	<span class="green">V </span> </li>
-		<li class="ct-ann_opt"  >	<span class="red">X </span> </li>
-		<li class="ct-ann_opt"  >	18 vues	  </li>
-		<li class="ct-ann_opt"  >	<span class="red">Actif </span> </li>
-		
-		<li class="ct-ann_id"	>	03		  </li>
-		<li class="ct-ann_title"> 	Un titre d'annonce lamba	</li>
-		<li class="ct-ann_date" >	19/10/2014	  </li>
-		<li class="ct-ann_opt"  >	<span class="green">V </span> </li>
-		<li class="ct-ann_opt"  >	<span class="red">X </span> </li>
-		<li class="ct-ann_opt"  >	18 vues	  </li>
-		<li class="ct-ann_opt"  >	<span class="red">Actif </span> </li>
-		
-		<li class="ct-ann_id"	>	04		  </li>
-		<li class="ct-ann_title"> 	Un titre d'annonce lamba	</li>
-		<li class="ct-ann_date" >	19/10/2014	  </li>
-		<li class="ct-ann_opt"  >	<span class="green">V </span> </li>
-		<li class="ct-ann_opt"  >	<span class="red">X </span> </li>
-		<li class="ct-ann_opt"  >	18 vues	  </li>
-		<li class="ct-ann_opt"  >	<span class="red">Actif </span> </li>
-		
-		<li class="ct-ann_id"	>	05		  </li>
-		<li class="ct-ann_title"> 	Un titre d'annonce lamba	</li>
-		<li class="ct-ann_date" >	19/10/2014	  </li>
-		<li class="ct-ann_opt"  >	<span class="green">V </span> </li>
-		<li class="ct-ann_opt"  >	<span class="red">X </span> </li>
-		<li class="ct-ann_opt"  >	18 vues	  </li>
-		<li class="ct-ann_opt"  >	<span class="red">Actif </span> </li>
-		
-		<li class="ct-ann_id"	>	06		  </li>
-		<li class="ct-ann_title"> 	Un titre d'annonce lamba	</li>
-		<li class="ct-ann_date" >	19/10/2014	  </li>
-		<li class="ct-ann_opt"  >	<span class="green">V </span> </li>
-		<li class="ct-ann_opt"  >	<span class="red">X </span> </li>
-		<li class="ct-ann_opt"  >	18 vues	  </li>
-		<li class="ct-ann_opt"  >	<span class="green">Vendu ! </span> </li>
-		
-		<li class="ct-ann_id"	>	07		  </li>
-		<li class="ct-ann_title"> 	Un titre d'annonce lamba	</li>
-		<li class="ct-ann_date" >	19/10/2014	  </li>
-		<li class="ct-ann_opt"  >	<span class="green">V </span> </li>
-		<li class="ct-ann_opt"  >	<span class="red">X </span> </li>
-		<li class="ct-ann_opt"  >	18 vues	  </li>
-		<li class="ct-ann_opt"  >	<span class="red">Actif </span> </li>
-		
-		<li class="ct-ann_id"	>	08		  </li>
-		<li class="ct-ann_title"> 	Un titre d'annonce lamba	</li>
-		<li class="ct-ann_date" >	19/10/2014	  </li>
-		<li class="ct-ann_opt"  >	<span class="green">V </span> </li>
-		<li class="ct-ann_opt"  >	<span class="red">X </span> </li>
-		<li class="ct-ann_opt"  >	18 vues	  </li>
-		<li class="ct-ann_opt"  >	<span class="red">Actif </span> </li>
-		
-		<li class="ct-ann_id"	>	09		  </li>
-		<li class="ct-ann_title"> 	Un titre d'annonce lamba	</li>
-		<li class="ct-ann_date" >	19/10/2014	  </li>
-		<li class="ct-ann_opt"  >	<span class="green">V </span> </li>
-		<li class="ct-ann_opt"  >	<span class="red">X </span> </li>
-		<li class="ct-ann_opt"  >	18 vues	  </li>
-		<li class="ct-ann_opt"  >	<span class="red">Actif </span> </li>
-		
-		<li class="ct-ann_id"	>	1000		  </li>
-		<li class="ct-ann_title"> 	Un titre d'annonce lamba	</li>
-		<li class="ct-ann_date" >	19/10/2014	  </li>
-		<li class="ct-ann_opt"  >	<span class="green">V </span> </li>
-		<li class="ct-ann_opt"  >	<span class="red">X </span> </li>
-		<li class="ct-ann_opt"  >	18 vues	  </li>
-		<li class="ct-ann_opt"  >	<span class="red">Actif </span> </li>
-
-		<div class="clear"></div>
 	</ul>
+		
+	{% for a in annonces %}
+	<a href="{{ path('punnet_editAnnonce', {'id' : a.id } ) }}" alt="" />
+	<ul class="{% if loop.index is even %}ct_ann_grey{% else %} ct_ann {% endif %}">	
+		<li class="ct-ann_id"	>	{{ a.id  }}		  </li>
+		<li class="ct-ann_voir"	>	
+				<a href="{{ path('punnet_showAnnonce') }}" alt="" />
+					<img src="{{ asset('bundles/punnetSite/images/icones/voir.png') }}" class="ico" alt="Une image" />	  
+				</a>
+		</li>
+		<li class="ct-ann_title"> 	{{ a.title  }}	</li>
+		<li class="ct-ann_date" >	{{ a.date|date('d/m/Y')  }}	  </li>
+		<li class="ct-ann_opt"  >	<span class="green"><a href="{{ path('punnet_homepage') }}" class="bord_link" alt="" />V</a></span> </li>
+		<li class="ct-ann_opt"  >	<span class="red"><a href="{{ path('punnet_homepage') }}" class="bord_link" alt="" />X</a> </span> </li>
+		<li class="ct-ann_opt"  >	18 vues	  </li>
+		<li class="ct-ann_opt"  >	<span class="green">Actif ! </span> </li>
+	</ul>
+	</a>
+	{% endfor %}
+	
+	</fieldset>
 
 </div>

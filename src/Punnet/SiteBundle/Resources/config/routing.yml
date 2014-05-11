@@ -18,14 +18,20 @@ punnet_showUser:
     pattern:  /show-user
     defaults: { _controller: PunnetSiteBundle:Site:showUser }
 
-punnet_depot:
-    pattern:  /depot
-    defaults: { _controller: PunnetSiteBundle:Site:depotAnnonce }
-
 punnet_showUserBord:
     pattern:  /bord
     defaults: { _controller: PunnetSiteBundle:Bord:showUserBord }
 
+punnet_depot:
+    pattern:  /bord/depot
+    defaults: { _controller: PunnetSiteBundle:Bord:depotAnnonce }
+
 punnet_showUserAnnonce:
     pattern:  /bord/show-annonce
     defaults: { _controller: PunnetSiteBundle:Bord:showUserAnnonce }
+
+punnet_editAnnonce:
+    pattern:  /bord/edit-annonce/{id}
+    defaults: { _controller: PunnetSiteBundle:Bord:editUserAnnonce }
+    requirements:
+        id: \d+

@@ -1,0 +1,7 @@
+Punnet\SiteBundle\Entity\Annonce\Annonce:
+    properties:
+        title:
+            - Length: { min:3 }
+            - Regex:  { pattern: "/^[a-zA-Z0-9àáâãäåòóôõöøèéêëçìíîïùúûüÿñ\"\'{}() -]+$/", message:"- Votre titre comporte des caractéres interdits." }
+        price:
+            - Regex: { pattern: "/\d/", message:"- Le tarif ne peut contenir que des chiffres"}

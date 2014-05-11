@@ -21,12 +21,14 @@ class PunnetAnnonceType extends AnnonceType
         $builder
              ->add('title', 'text', array('label'		=> 'Titre de l\'annonce', 'attr' => array( 
             											  'placeholder' => 'Un titre explicite est simple attire plus de monde...',
+            											  'class' => 'depot'
             											 )) )
-            ->add('description')
-            ->add('price', 'text', array('label'		=> 'Tarif','attr' => array( 
+            ->add('description', 'textarea', array())
+            ->add('price', 'text', array('label'		=> 'Tarif','required' => FALSE,
+            											   'attr' => array( 
             											  'placeholder' => '1000€',
 														  'class'		=> 'price'
-            											 )) )
+            											 )))
             ->add('region','entity',array('required'		 	=> FALSE,
 	            												   'class' 	        	=> 'PunnetSiteBundle:Region\Region',
 																   'property' 	   		=> 'Region',
@@ -48,6 +50,13 @@ class PunnetAnnonceType extends AnnonceType
 																   'empty_value'   		=> 'Choisissez votre ville...', 
 															       'attr'		   		=> array('class' => 'locale')
 															   ))
+			->add('categorie', 	'entity', array('class' 		=>'PunnetSiteBundle:Categorie\Categorie',
+					 											  'property' 			=> 'categorie',
+					 											  'group_by' 			=> 'parentcategorie.parent',
+					 											  'empty_value' 		=> 'Choisissez votre catégorie...',
+					 											  'label' 				=> 'Categorie',
+					 											  'attr' 				=> array('class' => 'cat')
+				 											  ))
         	->remove('date')
         	->remove('updated');
         

@@ -3,15 +3,27 @@
 namespace Punnet\SiteBundle\Entity\Annonce;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
+
+// On rajoute ce use pour le context ( le callback pour le titre ):
+use Symfony\Component\Validator\ExecutionContextInterface;
 
 /**
  * Annonce
  *
  * @ORM\Table()
  * @ORM\Entity(repositoryClass="Punnet\SiteBundle\Entity\Annonce\AnnonceRepository")
+ * @Assert\Callback(methods={"ValidTitle"})
  */
 class Annonce
 {
+
+	// Qui est l'auteur
+	/**
+    * @ORM\ManyToOne(targetEntity="Punnet\UserBundle\Entity\User")
+    */
+	private $user;
+	
 	// DANS QUEL REGION IL SE SITUE
     /**
     * @ORM\ManyToOne(targetEntity="Punnet\SiteBundle\Entity\Region\Region")
@@ -29,6 +41,12 @@ class Annonce
     * @ORM\ManyToOne(targetEntity="Punnet\SiteBundle\Entity\Ville\Ville")
     */
 	private $ville;
+	
+	// Quel Categorie
+	/**
+    * @ORM\ManyToOne(targetEntity="Punnet\SiteBundle\Entity\Categorie\Categorie")
+    */
+	private $categorie;
 	
     /**
      * @var integer
@@ -63,7 +81,7 @@ class Annonce
     /**
      * @var integer
      *
-     * @ORM\Column(name="price", type="integer")
+     * @ORM\Column(name="price", type="integer", nullable=true)
      */
     private $price;
 
@@ -73,13 +91,36 @@ class Annonce
      * @ORM\Column(name="updated", type="datetime")
      */
     private $updated;
+    
+    /**
+    * @var string
+    *
+    * @ORM\Column(name="ipadress")
+    */
+    private $ipadress;
 
 	
 	public function __construct()
 	{
-		$date 	  = new \DateTime();
-		$updated  = new \DateTime(); 	
+		$this->date  = new \DateTime();
+		$this->updated  = new \DateTime(); 	
 	}
+	
+	public function ValidTitle(ExecutionContextInterface $context)
+     {
+	    $mots_interdits = array('Vend', 'Vends', 'Achete', 'achete', 'donne');
+	    
+	    // On vérifie que le contenu ne contient pas l'un des mots
+		if (preg_match('#'.implode('|', $mots_interdits).'#', $this->getTitle())) 
+		{
+			// La règle est violée, on définit l'erreur et son message
+			// 1er argument : on dit quel attribut l'erreur concerne, ici « contenu »
+			// 2e argument : le message d'erreur
+			$context->addViolationAt('title', 'Veuillez ne pas inclure " vends, achete ou donne " dans votre titre.', array(), null);
+		}
+	    
+	    
+     }
 	
     /**
      * Get id
@@ -228,7 +269,30 @@ class Annonce
     {
         return $this->ville;
     }
+	
+	/**
+     * Set user
+     *
+     * @param \Punnet\UserBundle\Entity\User $user
+     * @return Annonce
+     */
+    public function setUser(\Punnet\UserBundle\Entity\User $user = null)
+    {
+        $this->user = $user;
 
+        return $this;
+    }
+
+    /**
+     * Get user
+     *
+     * @return \Punnet\UserBundle\Entity\User 
+     */
+    public function getUser()
+    {
+        return $this->user;
+    }
+    
     /**
      * Set region
      *
@@ -273,5 +337,51 @@ class Annonce
     public function getDepartement()
     {
         return $this->departement;
+    }
+
+    /**
+     * Set categorie
+     *
+     * @param \Punnet\SiteBundle\Entity\Categorie\Categorie $categorie
+     * @return Annonce
+     */
+    public function setCategorie(\Punnet\SiteBundle\Entity\Categorie\Categorie $categorie = null)
+    {
+        $this->categorie = $categorie;
+
+        return $this;
+    }
+
+    /**
+     * Get categorie
+     *
+     * @return \Punnet\SiteBundle\Entity\Categorie\Categorie 
+     */
+    public function getCategorie()
+    {
+        return $this->categorie;
+    }
+    
+    /**
+     * Set ipadress
+     *
+     * @param string $ipadress
+     * @return Annonce
+     */
+    public function setIpadress($ipadress)
+    {
+        $this->ipadress = $ipadress;
+
+        return $this;
+    }
+
+    /**
+     * Get ipadress
+     *
+     * @return string 
+     */
+    public function getIpadress()
+    {
+        return $this->ipadress;
     }
 }

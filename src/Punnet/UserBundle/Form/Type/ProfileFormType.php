@@ -45,6 +45,7 @@ class ProfileFormType extends AbstractType
             'translation_domain' => 'FOSUserBundle',
             'mapped' => false,
             'constraints' => $constraint,
+            'attr' => array('class' => 'signin')
         ));
     }
 
@@ -70,8 +71,8 @@ class ProfileFormType extends AbstractType
     protected function buildUserForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('username', null, array('label' => 'form.username', 'translation_domain' => 'FOSUserBundle'))
-            ->add('email', 'email', array('label' => 'form.email', 'translation_domain' => 'FOSUserBundle'))
+            ->add('username', null, array('label' => 'form.username', 'translation_domain' => 'FOSUserBundle', 'attr' => array('class' => 'signin')))
+            ->add('email', 'email', array('label' => 'form.email', 'translation_domain' => 'FOSUserBundle', 'attr' => array('class' => 'signin')))
             ->add('region','entity',array('required'		 	=> FALSE,
 	            												   'class' 	        	=> 'PunnetSiteBundle:Region\Region',
 																   'property' 	   		=> 'Region',
@@ -93,6 +94,25 @@ class ProfileFormType extends AbstractType
 																   'empty_value'   		=> 'Choisissez votre ville...', 
 															       'attr'		   		=> array('class' => 'profile_select')
 															   ))
+            ->add('surname', 'text' , array('label' => 'Prénom' , 'required' => FALSE, 'attr' => array( 'class' 			=> 'signin',
+            																	  'placeholder' 		=> 'Prénom')))
+            																	 
+	        ->add('firstname', 'text' , array('label' => 'Nom' , 'required' => FALSE, 'attr' => array('class' 			=> 'signin',
+	            																	   'placeholder' 	=> 'Nom')))
+	            
+	        ->add('phone', 'text' , array('label' => 'Téléphone' , 'required' => FALSE,  
+										  'attr' => array('class' => 'signin',
+	            																	  'placeholder'     => 'Ex: 0102030405')))
+	        ->add('showphone','choice', array( 'label' 	 => 'Afficher le numéro' , 
+	        				                   'choices' => array(
+						                							'1' => 'Maquer mon numéro',
+																	'2' => 'Toujours afficher mon numéro'),
+											   'attr'	 => array('class' => 'profile_select')))
+																		
+	        ->add('description', 'textarea' , array('required' => FALSE, 'attr' => array(
+	        										'class'    => 'login', 'placeholder'     => 'Une description de votre profile')))
+		    ->add('file','file', array('label' => 'Votre photo' ,'required' => 'FALSE',  'attr' => array('class' => 'login_file' )));
+	        
 
         ;
     }

@@ -1,8 +1,38 @@
-.reg_error{ margin-left: 150px;margin-bottom: 5px ;color: red; font-style: italic}
+.reg_error{ margin-left: 150px; margin-bottom: 5px ;color: red; font-style: italic}
 
 #content_user{
 	
 }
+
+.info, .success, .warning, .error, .validation {
+}
+
+.info {
+	color: #00529B;
+	background-color: #BDE5F8;
+
+}
+.success {
+	color: #4F8A10;
+	background-color: #DFF2BF;
+}
+.warning {
+	color: #9F6000;
+	background-color: #FEEFB3;
+}
+.error {
+	color: #D8000C;
+	background-color: #FFBABA;
+}
+
+.flash-notice{ 
+	color: #4F8A10;
+	background-color: #DFF2BF;
+	text-align: center; 
+	border: 1px solid;
+	margin: 10px 0px;
+	padding:15px 10px 15px 50px;
+ }
 
 #user{
 	margin: 0 auto;
@@ -161,12 +191,13 @@
 /*******************/
 
 div.checked{
+	width: 100%;
 	display: inline-block;
-	margin-left: 10px;
+	text-indent: 110px;
 }
 
 	div.checked span.false{
-		color: red
+		color: red;
 	}
 	
 	div.checked span.true{
@@ -175,15 +206,14 @@ div.checked{
 
 #reg_conf{
 	width: 1000px;
-	min-height: 500px;
+	min-height: 400px;
 	text-align: center;
 	margin: 0 auto;
-	margin-top: 50px;
 	border-bottom: 1px solid #CCC;
 }
 
 	#reg_conf h1#title{
-		padding-top: 200px;
+		padding-top:170px;
 		font-family: 'walkway_blackregular', Helvetica, serif;  
 		letter-spacing: 0.1em;
 		color: #666;
@@ -217,6 +247,21 @@ div.checked{
 		margin: 0 0 5px 0;
 	}
 	
+	#pfl_edit input.signin {
+		width: 450px;
+		border: 1px solid transparent;
+		outline: 0;
+		padding: 5px 6px 5px 10px;
+		display: inline-block;
+		margin: 0 auto;
+		color: #333;
+		font-style: italic;
+		background: #FDFDFD;
+		border: 1px solid #aaa;
+		border-radius: 4px;
+		margin-bottom: 5px;
+	}
+	
 	#pfl_edit select.profile_select{
 		width: 467px;
 		height: 25px;
@@ -233,6 +278,13 @@ div.checked{
 		margin-top: 10px;
 	}
 
+#avatar_show img#user_avatar{
+	margin-left: -20px;
+	width: 70px;
+	height: 70px;
+	border-radius: 8px;
+	vertical-align: middle;
+}
 
 
 

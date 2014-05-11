@@ -1,24 +1,32 @@
 <div id="profile">
+	
+	{% for flashMessage in app.session.flashbag.get('notice') %}
+		    <div class="flash-notice">
+		        {{ flashMessage }}
+		    </div>
+		{% endfor %}
 
-	<form action="{{ path('fos_user_registration_register') }}" {{ form_enctype(form) }} method="POST" class="fos_user_registration_register">
-	
-	
+	{{ form_start(form) }}	
 	<div id="profile_box">
-		<h1 id="title">Ajouter une annonce</h1>
+		<h1 id="title">{% if add_annonce %} Ajouter {% else %} Modifier
+		{% endif %} une annonce</h1>
 		<h2 class="pfl_etape">1 - Votre compte</h2>
 		
 		<div id="profile_box_head">
 		<div>
+			<div class="checked"><span class="false">{{ form_errors(form.title) }}</span></div>
 			<label class="profile">{{ form_label(form.title) }}</label>
 			{{ form_widget(form.title) }}
 		</div>
 		
 		<div>
+			<div class="checked"><span class="false">{{ form_errors(form.description) }}</span></div>
 			<label class="profile">{{ form_label(form.description) }}</label>
 			{{ form_widget(form.description) }}
 		</div>
 		
 		<div>
+			<div class="checked"><span class="false">{{ form_errors(form.price) }}</span></div>
 			<label class="profile">{{ form_label(form.price) }}</label>
 			{{ form_widget(form.price) }}
 		</div>
@@ -28,14 +36,16 @@
 		<h2 class="pfl_etape">2 - Catégorie</h2>
 
 		<div id="profile_box_cat">
-			<div>
-				<label class="profile">Categorie</label>
-				<select class="cat"><option>Categorie</option></select>
+			<div>	
+				<div class="checked"><span class="false">{{ form_errors(form.categorie) }}</span></div>
+				<label class="profile">{{ form_label(form.categorie) }}</label>
+			{{ form_widget(form.categorie) }}
 			</div>
 			
 			<div>
+			<div class="checked"><span class="false"></span></div>
 				<label class="profile">Sous cat</label>
-				<input type="text" class="" name="" />
+				<input type="text" class="depot" name="" />
 			</div>
 	</div>
 		
@@ -43,16 +53,19 @@
 		
 		<div id="profile_box_content">
 			<div>
+				<div class="checked"><span class="false">{{ form_errors(form.region) }}</span></div>
 				<label class="profile">{{ form_label(form.region) }}</label>
 				{{ form_widget(form.region) }}
 			</div>
 			
 			<div>
+				<div class="checked"><span class="false">{{ form_errors(form.departement) }}</span></div>
 				<label class="profile">{{ form_label(form.departement) }}</label>
 				{{ form_widget(form.departement) }}
 			</div>
 			
 			<div>
+				<div class="checked"><span class="false">{{ form_errors(form.ville) }}</span></div>
 				<label class="profile">{{ form_label(form.ville) }}</label>
 				{{ form_widget(form.ville) }}
 			</div>
@@ -62,5 +75,8 @@
 		<div>
 			<input type="submit" value="Valider" />
 		</div>
-
+		
+		{{ form_rest(form) }}
+		
+		{{ form_end(form) }}
 </div>

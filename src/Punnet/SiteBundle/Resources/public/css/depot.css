@@ -35,7 +35,7 @@
 
 #profile_box label.profile{ color: #333;width: 130px; display: inline-block; float: left; padding-top: 5px;}
 	
-	#profile_box input[type="text"], input[type="email"], input[type="password"] {
+	#profile_box input.depot {
 		width: 450px;
 		border: 1px solid transparent;
 		outline: 0;
