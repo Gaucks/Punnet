@@ -15,22 +15,25 @@ class SiteController extends Controller
         return $this->render('PunnetSiteBundle:ComingSoon:comingsoon.html.twig');
     }
     
-    // Affiche le menu
-    public function menuAction($request_region)
-    {
-		return $this->render('PunnetSiteBundle:Menu:menu.html.twig', array('request_region' => $request_region));
-    }
-    
     // Affiche le menu d'une annonce
-    public function menuShowAnnonceAction($annonce)
+    public function menuAnnonceAction($annonce = NULL, $menutype = NULL, $request_region = NULL)
     {	
-		return $this->render('PunnetSiteBundle:Menu:menuShowAnnonce.html.twig', array('annonceur' => $annonce));
-    }
-    
-     // Affiche le menu
-    public function menuShowAllUserAnnonceAction($annonceur)
-    {	
-		return $this->render('PunnetSiteBundle:Menu:menushowAllUserAnnonce.html.twig', array('annonceur' => $annonceur));
+    	if($menutype 	 == "showAnnonce"){
+	    	return $this->render('PunnetSiteBundle:Menu:menuShowAnnonce.html.twig', array('annonceur' => $annonce));
+    	}
+    	
+    	elseif($menutype == "showAllUserAnnonce"){
+	    	return $this->render('PunnetSiteBundle:Menu:menushowAllUserAnnonce.html.twig', array('annonceur' => $annonce));
+    	}
+    	
+    	elseif($menutype == "menuregion"){
+	    	return $this->render('PunnetSiteBundle:Menu:menu.html.twig', array('request_region' => $request_region));
+    	}
+    	
+    	else{
+	    	throw $this->createNotFoundException('Il y a un probleme avec le menu.');
+    	}
+		
     }
     
     // Affiche la page d'accueil
@@ -52,7 +55,9 @@ class SiteController extends Controller
 			throw $this->createNotFoundException('L\'annonce n\'existe pas, vous avez du faire une erreur.');
 		}
     	
-	    return $this->render('PunnetSiteBundle:Site:Annonce/showAnnonce.html.twig', array('showannonce' => TRUE, 'annonce' => $annonce, 'request_region' => $annonce->getRegion()->getRegion()));
+	    return $this->render('PunnetSiteBundle:Site:Annonce/showAnnonce.html.twig', array('showannonce'    => TRUE,
+	    																				  'menutype'	   => 'showAnnonce',
+	    																				  'annonce'        => $annonce, 																									  	      'request_region' => $annonce->getRegion()->getRegion()));
     }
     
     // Affiche la page d'accueil d'un utilisateur
@@ -81,17 +86,18 @@ class SiteController extends Controller
     		if($region != "toutes-les-regions"){
 	    		return $this->redirect($this->generateUrl('punnet_showRegion', array('region' => 'toutes-les-regions')));
     		}
-	    	$annonce		 = $em->getRepository('PunnetSiteBundle:Annonce\Annonce')->findAll(); 
+	    	$annonce		 = $em->getRepository('PunnetSiteBundle:Annonce\Annonce')->findAll();
 			$request_region  = "Toutes les régions";
     	}
     	
 		
 		return $this->render('PunnetSiteBundle:Site:Region/showRegion.html.twig', array('menu'           => 'region', 
-																						'region'         => $region, 
+																						'region'         => $region,
 																						'showannonce'    => FALSE,
 																						'defaut_menu' 	 => TRUE,
+																						'menutype'	   	 => 'menuregion',
 																						'request_region' => $request_region,
-																						'annonce' 		 => $annonce ));	
+																						'annonce' 		 => $annonce));	
 	} 
     
     // Affiche l'accueil d'une région
@@ -106,12 +112,12 @@ class SiteController extends Controller
 	    	throw $this->createNotFoundException('L\'utilisateur n\'existe pas, vous avez du faire une erreur.');
     	}
     	
-    	$liste_annonce = $em->getRepository('PunnetSiteBundle:Annonce\Annonce')->findBy(array('user' => $user));    	
+		$annonce = $em->getRepository('PunnetSiteBundle:Annonce\Annonce')->findBy(array('user' => $user));    	
 		
-		return $this->render('PunnetSiteBundle:Site:showAllUserAnnonce.html.twig', array('showAllUserAnnonce' => TRUE,  
-																						'showannonce'    => FALSE,
-																						'annonceur'      => $user,
+		return $this->render('PunnetSiteBundle:Site:showAllUserAnnonce.html.twig', array( 
+																						'liste'      	 => $annonce,
+																						'menutype'	   	 => 'showAllUserAnnonce',
 																						'request_region' => $user->getUsername(),
-																						'annonce' 		 => $liste_annonce ));	
+																						'annonce' 	 	 => $user ));	
 	}    
 }

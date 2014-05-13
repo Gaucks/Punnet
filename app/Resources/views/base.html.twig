@@ -91,15 +91,7 @@
         	<!------------------------------->
 <!--! AFFICHAGE DU MENU DE GAUCHE
 <!------------------------------->
-				{% if  showannonce is defined and showannonce == TRUE %}
-				    {{ render(controller('PunnetSiteBundle:Site:MenuShowAnnonce', {'annonce' : annonce }) ) }}
-				{% endif %}
-				{% if showAllUserAnnonce is defined and showAllUserAnnonce == TRUE %}
-					 {{ render(controller('PunnetSiteBundle:Site:MenuShowAllUserAnnonce', {'annonceur' : annonceur }) ) }}
-			    {% endif %}
-				{% if defaut_menu is defined and defaut_menu == TRUE%}
-				   {{ render(controller('PunnetSiteBundle:Site:Menu', {'request_region' : request_region }) ) }}
-        		{% endif %}
+				    {{ render(controller('PunnetSiteBundle:Site:MenuAnnonce', {'annonce'		: annonce,                                                      																			   'menutype' 		: menutype, 																							  		   'request_region' : request_region}) ) }}
 <!-------------------------------------------->
 <!--! AFFICHAGE DU HEADER DU CONTENU DE DROITE 
 <!-------------------------------------------->

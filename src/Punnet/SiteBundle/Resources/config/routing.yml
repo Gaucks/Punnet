@@ -19,7 +19,7 @@ punnet_showUser:
     defaults: { _controller: PunnetSiteBundle:Site:showUser }
 
 punnet_showAllUserAnnonce:
-    pattern:  /show-user-annonce/{user}
+    pattern:  /show-user-annonce/user/{user}
     defaults: { _controller: PunnetSiteBundle:site:showAllUserAnnonce }
 
 punnet_showUserBord:

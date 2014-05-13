@@ -11,7 +11,7 @@
 	<div id="ann_img_box">
 		<span id="tarif">Tarif : {% if annonce.price %}{{ annonce.price }} € {% else %} Inconnu {% endif %}</span>
 		<div id="ann_img">
-			<img src="{{ asset('bundles/punnetSite/images/imac.png') }}" id="picture" alt="Une image" />
+			<img src="{{ asset('bundles/uploads/img/') }}{{ annonce.image }}" id="picture" alt="Une image" />
 		</div>
 	</div>
 	<div id="ann_box">

@@ -1,6 +1,6 @@
 {% block body %}
 	<h3 class="tab_title">
-		{% if annonce == NULL %}
+		{% if liste == NULL %}
 		Il n'y a aucune annonce pour cette région actuellement, il est temps d'ajouter la premiere.
 		{% else %}
 		Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.
@@ -10,7 +10,8 @@
 	<div id="annonce_box_ctt">
 		
 
-		{% for a in annonce %}
+		{% for a in liste %}
+		<a href="{{ path('punnet_showAnnonce', {'annonce' : a.slug }) }}" alt="" class="ann"/>
 		<div class="annonce_box">
 			<div class="ann_img">
 				<img src="{{ asset('bundles/punnetsite/images/ferrari.jpeg') }}" class="ann" alt="Une image" />
@@ -21,19 +22,23 @@
 				<li class="desc">Ville: {{ a.ville.ville }} ( 83 )</li>
 				<li class="desc">Annonce du {{ a.date|date('d/m/y à h:i') }}</li>
 			</ul>
-			<span class="ann_request"><a href="{{ path('punnet_showAnnonce', {'annonce' : a.slug }) }}" class="hide">Afficher</a></span>
-			<span class="ann_price">{% if a.price %} {{ a.price }} € {% else %} non précisé {% endif %}</span>
+			<ul class="ann_opt_list">
+				<li class="bottom_list">{{ a.categorie.categorie }}</li>
+				<li class="bottom_list_price">{% if a.price %} {{ a.price }} € {% else %} Inconnu {% endif %}</li>
+			</ul>
 			</div>
 		</div>
-		
+		</a>
 		{% endfor %}
 		
+		<div class="clear"></div>
+		
+	
 		{% if annonce != NULL %}
 		<div id="pagination">Page suivante >></div>
 		{% endif %}
 		
-		<div class="clear"></div>
-	</div>
+		</div>
 		
 		
 {% endblock %}

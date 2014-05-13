@@ -105,6 +105,13 @@ class Annonce
 	* @ORM\Column(length=256)
 	*/
 	private $slug;
+	
+	 /**
+    * @var string
+    *
+    * @ORM\Column(name="image", nullable=true)
+    */
+	private $image;
 
 	
 	public function __construct()
@@ -413,5 +420,28 @@ class Annonce
     public function getSlug()
     {
         return $this->slug;
+    }
+
+    /**
+     * Set image
+     *
+     * @param string $image
+     * @return Annonce
+     */
+    public function setImage($image)
+    {
+        $this->image = $image;
+
+        return $this;
+    }
+
+    /**
+     * Get image
+     *
+     * @return string 
+     */
+    public function getImage()
+    {
+        return $this->image;
     }
 }

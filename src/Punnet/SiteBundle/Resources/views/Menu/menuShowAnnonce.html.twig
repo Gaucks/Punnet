@@ -3,7 +3,7 @@
 <div id="region_menu">
 
 	<div id="region_rep_id">
-		<img src="{{ asset('bundles/uploads/img/') }}{{ annonceur.user.avatar }}" class="avatar"  alt="{{ annonceur.user.username }}" />
+		<img src="{{ asset('bundles/uploads/avatar/') }}{{ annonceur.user.avatar }}" class="avatar"  alt="{{ annonceur.user.username }}" />
 		<h4 id="region_ownername">{{ annonceur.user.username }}</h4>
 		<input type="button" class="button" value="S'abonner" />
 	</div>
@@ -25,12 +25,15 @@
 				Evaluation : aucune</li>
 					
 				<li class="row">
+				<a href="{{ path('punnet_showAllUserAnnonce', { 'user' : annonceur.user.id } ) }}" alt="" />
 				<img src="{{ asset('bundles/punnetsite/images/icones/png_black/desktop.png') }}" class="png_black" alt="Une image" />
-				Toutes ses annonces</li>
+				Toutes ses annonces
+				</a></li>
 					
 				<li class="row">
 				<img src="{{ asset('bundles/punnetsite/images/icones/png_black/home.png') }}" class="png_black" alt="Une image" />
-				Afficher le profil</li>
+				Afficher le profil
+				</li>
 					
 				<li class="row">
 				<img src="{{ asset('bundles/punnetsite/images/icones/png_black/heart.png') }}" class="png_black" alt="Une image" />

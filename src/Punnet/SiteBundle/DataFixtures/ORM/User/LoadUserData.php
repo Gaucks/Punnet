@@ -37,6 +37,7 @@ class LoadUserData extends AbstractFixture implements FixtureInterface, Containe
         $user->setRegion($this->getReference('region-pa'));
         $user->setDepartement($this->getReference('departement-var'));
         $user->setVille($this->getReference('ville-vin'));
+        $user->setAvatar('world-burn.jpg');
         $user->setEnabled(true);
 
         $manager->persist($user);

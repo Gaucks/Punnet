@@ -162,7 +162,10 @@ class LoadCategorieData extends AbstractFixture implements OrderedFixtureInterfa
 				
 		$manager->flush();
 		
-		 $this->addReference('categorie-1', $informatique);
+		$this->addReference('categorie-1', $informatique);
+		$this->addReference('categorie-2', $materiel);
+		$this->addReference('categorie-3', $divers);
+		$this->addReference('categorie-4', $resto_hotel);
 		
 		
 	}	
