@@ -66,7 +66,8 @@ div.ann_options{
 	margin-right: 10px;
 }
 
-.box-pnl-ann-left h3.ann_title{ float: left; }
+.box-pnl-ann-left h3.ann_title{  }
+.box-pnl-ann-left h3.ann_title:hover{ text-decoration: underline }
 
 .box-pnl-ann-left ul.ann_desc{ float: left; }
 
@@ -84,6 +85,10 @@ div.ann_options{
 	}
 	
 	.ann_options span.ann_request{
+
+	}
+	
+	.ann_options a.interested{
 		width: 80px;
 		display: inline-block;
 		text-align: center;
@@ -92,6 +97,10 @@ div.ann_options{
 		-webkit-font-smoothing: antialiased;	
 		font-weight: bold;
 		background: #569db1;
+	}
+	
+	.ann_options a.interested:hover{
+		display: inline-block
 	}
 
 /* CONTENU DES STATISTIQUES */

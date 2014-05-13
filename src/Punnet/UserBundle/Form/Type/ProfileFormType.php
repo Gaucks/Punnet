@@ -111,7 +111,7 @@ class ProfileFormType extends AbstractType
 																		
 	        ->add('description', 'textarea' , array('required' => FALSE, 'attr' => array(
 	        										'class'    => 'login', 'placeholder'     => 'Une description de votre profile')))
-		    ->add('file','file', array('label' => 'Votre photo' ,'required' => 'FALSE',  'attr' => array('class' => 'login_file' )));
+		    ->add('file','file', array('required' => FALSE, 'label' => 'Votre photo',  'attr' => array('class' => 'login_file' )));
 	        
 
         ;

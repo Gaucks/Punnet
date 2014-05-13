@@ -76,7 +76,7 @@
 					</li>
     				{% endif %}
     				{% if app.user.region.region is defined  %}
-						<li class="region-menu"><a href="{{ path('punnet_showRegion') }}" alt="" class="access_red" />{{ app.user.region.region}}</a></li>    				    
+						<li class="region-menu"><a href="{{ path('punnet_showRegion', {'region' : app.user.region.slug }) }}" alt="" class="access_red" />{{ app.user.region.region}}</a></li>    				    
     				    
     				{% endif %}
 

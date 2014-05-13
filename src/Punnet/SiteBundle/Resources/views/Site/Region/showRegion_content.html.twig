@@ -1,237 +1,39 @@
 {% block body %}
 	<h3 class="tab_title">
-		Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+		{% if annonce == NULL %}
+		Il n'y a aucune annonce pour cette région actuellement, il est temps d'ajouter la premiere.
+		{% else %}
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.
+		{% endif %}
 	</h3>
 	
 	<div id="annonce_box_ctt">
 		
-		
+
+		{% for a in annonce %}
+		<a href="{{ path('punnet_showAnnonce', {'annonce' : a.slug }) }}" alt="" class="ann"/>
 		<div class="annonce_box">
 			<div class="ann_img">
 				<img src="{{ asset('bundles/punnetsite/images/ferrari.jpeg') }}" class="ann" alt="Une image" />
 			</div>
 			<div class="ann_desc">
 			<ul class="ann">
-				<li class="title">Ferrari rouge 2014</li>
-				<li class="desc">Ville: Vinon sur verdon ( 83 )</li>
-				<li class="desc">Annonce du 29/03/14</li>
+				<li class="title">{{ a.title }}</li>
+				<li class="desc">Ville: {{ a.ville.ville }} ( 83 )</li>
+				<li class="desc">Annonce du {{ a.date|date('d/m/y à h:i') }}</li>
 			</ul>
-			<span class="ann_request"><a href="{{ path('punnet_showAnnonce') }}" class="hide">Afficher</a></span>
-			<span class="ann_price">125000€</span>
+			<span class="ann_request"><a href="{{ path('punnet_showAnnonce', {'annonce' : a.slug }) }}" class="show">Afficher</a></span>
+			<span class="ann_price">{% if a.price %} {{ a.price }} € {% else %} Inconnu {% endif %}</span>
 			</div>
 		</div>
+		</a>
 		
-		<div class="annonce_box">
-			<div class="ann_img">
-				<img src="{{ asset('bundles/punnetsite/images/photo.jpg') }}" class="ann" alt="Une image" />
-			</div>
-			<div class="ann_desc">
-			<ul class="ann">
-				<li class="title">Shooting photo Aix en provence</li>
-				<li class="desc">Vinon sur verdon ( 83 ) - Var</li>
-				<li class="desc">Annonce du 29/03/14</li>
-			</ul>
-			<span class="ann_request">Afficher</span>
-			<span class="ann_price">125000€</span>
-			</div>
-		</div>
+		{% endfor %}
 		
-		<div class="annonce_box">
-			<div class="ann_img">
-				<img src="{{ asset('bundles/punnetsite/images/ferrari.jpeg') }}" class="ann" alt="Une image" />
-			</div>
-			<div class="ann_desc">
-			<ul class="ann">
-				<li class="title">Ferrari rouge 2014</li>
-				<li class="desc">Ville: Vinon sur verdon ( 83 )</li>
-				<li class="desc">Annonce du 29/03/14</li>
-			</ul>
-			<span class="ann_request">Afficher</span>
-			<span class="ann_price">125000€</span>
-			</div>
-		</div>
-		
-		<div class="annonce_box">
-			<div class="ann_img">
-				<img src="{{ asset('bundles/punnetsite/images/photo.jpg') }}" class="ann" alt="Une image" />
-			</div>
-			<div class="ann_desc">
-			<ul class="ann">
-				<li class="title">Shooting photo Aix en provence</li>
-				<li class="desc">Vinon sur verdon ( 83 ) - Var</li>
-				<li class="desc">Annonce du 29/03/14</li>
-			</ul>
-			<span class="ann_request">Afficher</span>
-			<span class="ann_price">125000€</span>
-			</div>
-		</div>
-		
-		<div class="annonce_box">
-			<div class="ann_img">
-				<img src="{{ asset('bundles/punnetsite/images/ferrari.jpeg') }}" class="ann" alt="Une image" />
-			</div>
-			<div class="ann_desc">
-			<ul class="ann">
-				<li class="title">Ferrari rouge 2014</li>
-				<li class="desc">Ville: Vinon sur verdon ( 83 )</li>
-				<li class="desc">Annonce du 29/03/14</li>
-			</ul>
-			<span class="ann_request">Afficher</span>
-			<span class="ann_price">1125000€</span>
-			</div>
-		</div>
-		
-		<div class="annonce_box">
-			<div class="ann_img">
-				<img src="{{ asset('bundles/punnetsite/images/photo.jpg') }}" class="ann" alt="Une image" />
-			</div>
-			<div class="ann_desc">
-			<ul class="ann">
-				<li class="title">Shooting photo Aix en provence</li>
-				<li class="desc">Vinon sur verdon ( 83 ) - Var</li>
-				<li class="desc">Annonce du 29/03/14</li>
-			</ul>
-			<span class="ann_request">Afficher</span>
-			<span class="ann_price">1000€</span>
-			</div>
-		</div>
-		
-		<div class="annonce_box">
-			<div class="ann_img">
-				<img src="{{ asset('bundles/punnetsite/images/photo.jpg') }}" class="ann" alt="Une image" />
-			</div>
-			<div class="ann_desc">
-			<ul class="ann">
-				<li class="title">Shooting photo Aix en provence</li>
-				<li class="desc">Vinon sur verdon ( 83 ) - Var</li>
-				<li class="desc">Annonce du 29/03/14</li>
-			</ul>
-			<span class="ann_request">Afficher</span>
-			<span class="ann_price">125000€</span>
-			</div>
-		</div>
-		
-		<div class="annonce_box">
-			<div class="ann_img">
-				<img src="{{ asset('bundles/punnetsite/images/ferrari.jpeg') }}" class="ann" alt="Une image" />
-			</div>
-			<div class="ann_desc">
-			<ul class="ann">
-				<li class="title">Ferrari rouge 2014</li>
-				<li class="desc">Ville: Vinon sur verdon ( 83 )</li>
-				<li class="desc">Annonce du 29/03/14</li>
-			</ul>
-			<span class="ann_request">Afficher</span>
-			<span class="ann_price">125000€</span>
-			</div>
-		</div>
-		
-		<div class="annonce_box">
-			<div class="ann_img">
-				<img src="{{ asset('bundles/punnetsite/images/photo.jpg') }}" class="ann" alt="Une image" />
-			</div>
-			<div class="ann_desc">
-			<ul class="ann">
-				<li class="title">Shooting photo Aix en provence</li>
-				<li class="desc">Vinon sur verdon ( 83 ) - Var</li>
-				<li class="desc">Annonce du 29/03/14</li>
-			</ul>
-			<span class="ann_request">Afficher</span>
-			<span class="ann_price">125000€</span>
-			</div>
-		</div>
-		
-		<div class="annonce_box">
-			<div class="ann_img">
-				<img src="{{ asset('bundles/punnetsite/images/photo.jpg') }}" class="ann" alt="Une image" />
-			</div>
-			<div class="ann_desc">
-			<ul class="ann">
-				<li class="title">Shooting photo Aix en provence</li>
-				<li class="desc">Vinon sur verdon ( 83 ) - Var</li>
-				<li class="desc">Annonce du 29/03/14</li>
-			</ul>
-			<span class="ann_request">Afficher</span>
-			<span class="ann_price">125000€</span>
-			</div>
-		</div>
-		
-		<div class="annonce_box">
-			<div class="ann_img">
-				<img src="{{ asset('bundles/punnetsite/images/ferrari.jpeg') }}" class="ann" alt="Une image" />
-			</div>
-			<div class="ann_desc">
-			<ul class="ann">
-				<li class="title">Ferrari rouge 2014</li>
-				<li class="desc">Ville: Vinon sur verdon ( 83 )</li>
-				<li class="desc">Annonce du 29/03/14</li>
-			</ul>
-			<span class="ann_request">Afficher</span>
-			<span class="ann_price">125000€</span>
-			</div>
-		</div>
-		
-		<div class="annonce_box">
-			<div class="ann_img">
-				<img src="{{ asset('bundles/punnetsite/images/photo.jpg') }}" class="ann" alt="Une image" />
-			</div>
-			<div class="ann_desc">
-			<ul class="ann">
-				<li class="title">Shooting photo Aix en provence</li>
-				<li class="desc">Vinon sur verdon ( 83 ) - Var</li>
-				<li class="desc">Annonce du 29/03/14</li>
-			</ul>
-			<span class="ann_request">Afficher</span>
-			<span class="ann_price">125000€</span>
-			</div>
-		</div>
-		
-		<div class="annonce_box">
-			<div class="ann_img">
-				<img src="{{ asset('bundles/punnetsite/images/photo.jpg') }}" class="ann" alt="Une image" />
-			</div>
-			<div class="ann_desc">
-			<ul class="ann">
-				<li class="title">Shooting photo Aix en provence</li>
-				<li class="desc">Vinon sur verdon ( 83 ) - Var</li>
-				<li class="desc">Annonce du 29/03/14</li>
-			</ul>
-			<span class="ann_request">Afficher</span>
-			<span class="ann_price">125000€</span>
-			</div>
-		</div>
-		
-		<div class="annonce_box">
-			<div class="ann_img">
-				<img src="{{ asset('bundles/punnetsite/images/ferrari.jpeg') }}" class="ann" alt="Une image" />
-			</div>
-			<div class="ann_desc">
-			<ul class="ann">
-				<li class="title">Ferrari rouge 2014</li>
-				<li class="desc">Ville: Vinon sur verdon ( 83 )</li>
-				<li class="desc">Annonce du 29/03/14</li>
-			</ul>
-			<span class="ann_request">Afficher</span>
-			<span class="ann_price">125000€</span>
-			</div>
-		</div>
-		
-		<div class="annonce_box">
-			<div class="ann_img">
-				<img src="{{ asset('bundles/punnetsite/images/photo.jpg') }}" class="ann" alt="Une image" />
-			</div>
-			<div class="ann_desc">
-			<ul class="ann">
-				<li class="title">Shooting photo Aix en provence</li>
-				<li class="desc">Vinon sur verdon ( 83 ) - Var</li>
-				<li class="desc">Annonce du 29/03/14</li>
-			</ul>
-			<span class="ann_request">Afficher</span>
-			<span class="ann_price">125000€</span>
-			</div>
-		</div>
-		
+		{% if annonce != NULL %}
 		<div id="pagination">Page suivante >></div>
+		{% endif %}
+		
 		<div class="clear"></div>
 	</div>
 		

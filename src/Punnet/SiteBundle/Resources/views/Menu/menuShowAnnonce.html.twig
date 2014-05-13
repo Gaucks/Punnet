@@ -10,15 +10,42 @@
 	
 	<div id="region_menu_row">
 			<ul class="row">
-				<li class="row">Ville: {{ annonceur.ville.ville }}</li>
-				<li class="row">Contact: {{ annonceur.user.phone }}</li>
-				<li class="row">Evaluation : aucune</li>
-				<li class="row">Toutes ses annonces</li>
-				<li class="row">Afficher le profil</li>
-				<li class="row">Partager cette annonce</li>
-				<li class="row">Signaler cette annonce</li>
+			
+				<li class="row">
+				<a href="{{ path('punnet_showRegion', { 'region' : annonceur.region.slug } ) }}" alt="" />
+				<img src="{{ asset('bundles/punnetsite/images/icones/png_black/direction-sign.png') }}" class="png_black" alt="Une image" >
+				Ville: {{ annonceur.ville.ville }}</li>
+				</a>
+				<li class="row">
+				<img src="{{ asset('bundles/punnetsite/images/icones/png_black/phone-sign.png') }}" class="png_black" alt="Une image" />
+				Contact: {{ annonceur.user.phone }}</li>
+					
+				<li class="row">
+				<img src="{{ asset('bundles/punnetsite/images/icones/png_black/geek.png') }}" class="png_black" alt="Une image" />
+				Evaluation : aucune</li>
+					
+				<li class="row">
+				<img src="{{ asset('bundles/punnetsite/images/icones/png_black/desktop.png') }}" class="png_black" alt="Une image" />
+				Toutes ses annonces</li>
+					
+				<li class="row">
+				<img src="{{ asset('bundles/punnetsite/images/icones/png_black/home.png') }}" class="png_black" alt="Une image" />
+				Afficher le profil</li>
+					
+				<li class="row">
+				<img src="{{ asset('bundles/punnetsite/images/icones/png_black/heart.png') }}" class="png_black" alt="Une image" />
+				Partager cette annonce</li>
+					
+				<li class="row">
+				<img src="{{ asset('bundles/punnetsite/images/icones/png_black/list2.png') }}" class="png_black" alt="Une image" />
+				Dans le même genre</li>
+					
+				<li class="row">
+				<img src="{{ asset('bundles/punnetsite/images/icones/png_black/eye-close.png') }}" class="png_black" alt="Une image" />
+				Signaler cette annonce</li>
+					
 			</ul>
-		</div>
+	</div>
 		
 		<div class="center">
 			<a href="{{ path('punnet_depot') }}" alt="" /><input type="button" id="new" value="Nouvelle annonce" /></a>

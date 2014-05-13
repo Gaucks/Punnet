@@ -61,6 +61,9 @@ class LoadVilleData extends AbstractFixture implements OrderedFixtureInterface
 
 		
 		$manager->flush();
+		
+		// Ajout des références pour transmettre aux villes
+		$this->addReference('ville-vin', $vinon);
 	}	
 	
 	// Fonction de création golbale

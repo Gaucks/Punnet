@@ -15,7 +15,7 @@
 }
 
 a{ text-decoration: none; color: inherit; }
-a:hover{ color: yellow }
+a:hover{ color: inherit; text-decoration: underline }
 
 
 input::-webkit-input-placeholder {
@@ -76,6 +76,8 @@ h4 { font-size: 0.9em; color: #32a7e0  }
 input{ font-size: 1em; }
 input[type="submit"],input[type="button"]{ cursor: pointer }
 div.clear{ clear:both }
+
+img.png_black{ width: 20px; vertical-align: middle; margin-right: 0px; margin-left: -10px; }
 
 /**********/
 /*! SITE  */

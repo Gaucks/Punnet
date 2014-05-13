@@ -3,6 +3,7 @@
 namespace Punnet\SiteBundle\Entity\Region;
 
 use Doctrine\ORM\Mapping as ORM;
+use Gedmo\Mapping\Annotation as Gedmo;
 
 /**
  * Region
@@ -27,6 +28,12 @@ class Region
 	 * @ORM\Column(name="region", type="string", length=128)
 	 */
 	 private $region;
+	 
+	 /**
+	* @Gedmo\Slug(fields={"region"})
+	* @ORM\Column(length=128, unique=true)
+	*/
+	private $slug;
 
     /**
      * Get id
@@ -59,5 +66,28 @@ class Region
     public function getRegion()
     {
         return $this->region;
+    }
+
+    /**
+     * Set slug
+     *
+     * @param string $slug
+     * @return Region
+     */
+    public function setSlug($slug)
+    {
+        $this->slug = $slug;
+
+        return $this;
+    }
+
+    /**
+     * Get slug
+     *
+     * @return string 
+     */
+    public function getSlug()
+    {
+        return $this->slug;
     }
 }

@@ -1,8 +1,8 @@
 <div id="user_menu">
 
 	<div id="user_rep_id">
-		<img src="{{ asset('bundles/punnetsite/images/photo.jpg') }}" class="avatar" alt="User Avatar" />
-		<h4 id="user_ownername">{{ app.user.username }} Gautier</h4>
+		<img src="{{ asset('bundles/punnetsite/images/')}}{{ app.user.avatar }}" class="avatar" alt="User Avatar" />
+		<h4 id="user_ownername">{{ app.user.username }} </h4>
 		<p class="profil"><a href="{{ path('fos_user_profile_edit') }}" alt="" class="link"/>Modifier mon profil</a></p>
 	</div>
 	
@@ -10,34 +10,34 @@
 			<ul class="row">
 				<li class="row">
 					<a href="{{ path('punnet_showUserAnnonce') }}" alt="" class="link"/>
-					<img src="{{ asset('bundles/punnetsite/images/icones/Gear.png') }}" class="menu_ico" alt="Icones" />
+					<img src="{{ asset('bundles/punnetsite/images/icones/Gear.png') }}" class="png_black" alt="Icones" />
 					Mes annonces</a>
 				</li>
 				<li class="row">
 					<a href="{{ path('punnet_showUserAnnonce') }}" alt="" class="link" />
-					<img src="{{ asset('bundles/punnetsite/images/icones/E-Mail.png') }}" class="menu_ico" alt="Icones" />
+					<img src="{{ asset('bundles/punnetsite/images/icones/E-Mail.png') }}" class="png_black" alt="Icones" />
 					Ma Punnet Box</a>
 				</li>
 				<li class="row">
 					<a href="{{ path('punnet_showUserAnnonce') }}" alt="" class="link"/>
-					<img src="{{ asset('bundles/punnetsite/images/icones/RemoteDesktop.png') }}" class="menu_ico" alt="Icones" />
+					<img src="{{ asset('bundles/punnetsite/images/icones/RemoteDesktop.png') }}" class="png_black" alt="Icones" />
 					Mes abonnements
 					</a>
 				</li>
 				
 				<li class="row">
 					<a href="{{ path('punnet_showUserAnnonce') }}" alt="" class="link"/>
-					<img src="{{ asset('bundles/punnetsite/images/icones/Gear.png') }}" class="menu_ico" alt="Icones" />
+					<img src="{{ asset('bundles/punnetsite/images/icones/Gear.png') }}" class="png_black" alt="Icones" />
 					Mes abonnés</a>
 				</li>
 				<li class="row">
 					<a href="{{ path('punnet_showUserAnnonce') }}" alt="" class="link"/>
-					<img src="{{ asset('bundles/punnetsite/images/icones/E-Mail.png') }}" class="menu_ico" alt="Icones" /> 
+					<img src="{{ asset('bundles/punnetsite/images/icones/E-Mail.png') }}" class="png_black" alt="Icones" /> 
 					Mon profil</a>
 				</li>
 				<li class="row">
 					<a href="{{ path('punnet_showUserAnnonce') }}" alt="" class="link" />
-					<img src="{{ asset('bundles/punnetsite/images/icones/RemoteDesktop.png') }}" class="menu_ico" alt="Icones" />
+					<img src="{{ asset('bundles/punnetsite/images/icones/RemoteDesktop.png') }}" class="png_black" alt="Icones" />
 					Statistiques</a>
 				</li>
 			</ul>

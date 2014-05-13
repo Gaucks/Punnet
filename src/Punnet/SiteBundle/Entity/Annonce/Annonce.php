@@ -7,6 +7,7 @@ use Symfony\Component\Validator\Constraints as Assert;
 
 // On rajoute ce use pour le context ( le callback pour le titre ):
 use Symfony\Component\Validator\ExecutionContextInterface;
+use Gedmo\Mapping\Annotation as Gedmo;
 
 /**
  * Annonce
@@ -95,9 +96,15 @@ class Annonce
     /**
     * @var string
     *
-    * @ORM\Column(name="ipadress")
+    * @ORM\Column(name="ipadress", nullable=true)
     */
     private $ipadress;
+    
+    /**
+	* @Gedmo\Slug(fields={"title"})
+	* @ORM\Column(length=256)
+	*/
+	private $slug;
 
 	
 	public function __construct()
@@ -383,5 +390,28 @@ class Annonce
     public function getIpadress()
     {
         return $this->ipadress;
+    }
+
+    /**
+     * Set slug
+     *
+     * @param string $slug
+     * @return Annonce
+     */
+    public function setSlug($slug)
+    {
+        $this->slug = $slug;
+
+        return $this;
+    }
+
+    /**
+     * Get slug
+     *
+     * @return string 
+     */
+    public function getSlug()
+    {
+        return $this->slug;
     }
 }

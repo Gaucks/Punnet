@@ -1,0 +1,51 @@
+
+
+<div id="region_menu">
+
+	<div id="region_rep_id">
+		<img src="{{ asset('bundles/uploads/img/') }}{{ annonceur.avatar }}" class="avatar"  alt="{{ annonceur.username }}" />
+		<h4 id="region_ownername">{{ annonceur.username }}</h4>
+		<input type="button" class="button" value="S'abonner" />
+	</div>
+	
+	<div id="region_menu_row">
+			<ul class="row">
+			
+				<li class="row">
+				<a href="{{ path('punnet_showRegion', { 'region' : annonceur.region.slug } ) }}" alt="" />
+				<img src="{{ asset('bundles/punnetsite/images/icones/png_black/direction-sign.png') }}" class="png_black" alt="Une image" >
+				Ville: {{ annonceur.ville.ville }}</li>
+				</a>
+				<li class="row">
+				<img src="{{ asset('bundles/punnetsite/images/icones/png_black/phone-sign.png') }}" class="png_black" alt="Une image" />
+				Contact: {{ annonceur.phone }}</li>
+					
+				<li class="row">
+				<img src="{{ asset('bundles/punnetsite/images/icones/png_black/geek.png') }}" class="png_black" alt="Une image" />
+				Evaluation : aucune</li>
+					
+				<li class="row">
+				<img src="{{ asset('bundles/punnetsite/images/icones/png_black/desktop.png') }}" class="png_black" alt="Une image" />
+				Toutes ses annonces</li>
+					
+				<li class="row">
+				<img src="{{ asset('bundles/punnetsite/images/icones/png_black/home.png') }}" class="png_black" alt="Une image" />
+				Afficher son profil</li>
+					
+				<li class="row">
+				<img src="{{ asset('bundles/punnetsite/images/icones/png_black/heart.png') }}" class="png_black" alt="Une image" />
+				Partager sa page</li>
+					
+				<li class="row">
+				<img src="{{ asset('bundles/punnetsite/images/icones/png_black/eye-close.png') }}" class="png_black" alt="Une image" />
+				Signaler cette page</li>
+					
+			</ul>
+	</div>
+		
+		<div class="center">
+			<a href="{{ path('punnet_depot') }}" alt="" /><input type="button" id="new" value="Nouvelle annonce" /></a>
+		</div>	
+
+</div>
+

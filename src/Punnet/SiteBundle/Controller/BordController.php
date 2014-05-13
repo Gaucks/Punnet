@@ -18,7 +18,14 @@ class BordController extends Controller
     		return $this->redirect($this->generateUrl('fos_user_security_login'));
     	}
     	
-    	return $this->render('PunnetSiteBundle:Bord:UserBord/UserBord.html.twig', array());	
+    	$user = $securityContext->getToken()->getUser();
+    	
+    	$em = $this->getDoctrine()->getManager();
+    	
+    	$annonces = $em->getRepository('PunnetSiteBundle:Annonce\Annonce')->findBy(array('user' => $user), array('date' => 'DESC'));
+    	
+    	
+    	return $this->render('PunnetSiteBundle:Bord:UserBord/UserBord.html.twig', array('annonces' => $annonces ));	
 	}
 	
 	// Affiche la page des annonces

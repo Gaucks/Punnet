@@ -123,11 +123,9 @@ div.center input[type="button"]#new:hover{
 		background: #FFF;
 	}
 	
-	#owner_usr_menu img.menu_ico{
-		height: 24px;
+	#owner_usr_menu img.png_black{
 		vertical-align: middle;
-		margin-top: -5px;
-		margin-right: 3px;
+		margin-top: -3px;
 	}
 	
 	#owner_usr_menu a.link:hover{

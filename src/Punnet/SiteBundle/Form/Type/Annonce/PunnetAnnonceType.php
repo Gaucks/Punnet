@@ -29,21 +29,21 @@ class PunnetAnnonceType extends AnnonceType
             											  'placeholder' => '1000€',
 														  'class'		=> 'price'
             											 )))
-            ->add('region','entity',array('required'		 	=> FALSE,
+            ->add('region','entity',array('required'		 	=> TRUE,
 	            												   'class' 	        	=> 'PunnetSiteBundle:Region\Region',
 																   'property' 	   		=> 'Region',
 																   'label' 		   		=> 'Région:',
 																   'empty_value'   		=> 'Choisissez votre Region...', 
 															       'attr'		   		=> array('class' => 'locale')
 															   ))
-			->add('departement','entity', array('required'		 	=> FALSE,
+			->add('departement','entity', array('required'		 	=> TRUE,
 	            												   'class' 	        	=> 'PunnetSiteBundle:Departement\Departement',
 																   'property' 	   		=> 'departement',
 																   'label' 		   		=> 'Département:',
 																   'empty_value'   		=> 'Choisissez votre département...', 
 															       'attr'		   		=> array('class' => 'locale')
 															   ))												
-            ->add('ville','entity', array('required'		 	=> FALSE,
+            ->add('ville','entity', array('required'		 	=> TRUE,
 	            												   'class' 	        	=> 'PunnetSiteBundle:Ville\Ville',
 																   'property' 	   		=> 'ville',
 																   'label' 		   		=> 'Ville:',

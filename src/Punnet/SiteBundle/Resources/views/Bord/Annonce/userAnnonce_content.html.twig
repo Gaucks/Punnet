@@ -23,17 +23,17 @@
 	</ul>
 		
 	{% for a in annonces %}
-	<a href="{{ path('punnet_editAnnonce', {'id' : a.id } ) }}" alt="" />
+	
 	<ul class="{% if loop.index is even %}ct_ann_grey{% else %} ct_ann {% endif %}">	
 		<li class="ct-ann_id"	>	{{ a.id  }}		  </li>
 		<li class="ct-ann_voir"	>	
-				<a href="{{ path('punnet_showAnnonce') }}" alt="" />
+				<a href="{{ path('punnet_showAnnonce', { 'annonce' : a.slug }) }}" alt="" />
 					<img src="{{ asset('bundles/punnetSite/images/icones/voir.png') }}" class="ico" alt="Une image" />	  
 				</a>
 		</li>
 		<li class="ct-ann_title"> 	{{ a.title  }}	</li>
 		<li class="ct-ann_date" >	{{ a.date|date('d/m/Y')  }}	  </li>
-		<li class="ct-ann_opt"  >	<span class="green"><a href="{{ path('punnet_homepage') }}" class="bord_link" alt="" />V</a></span> </li>
+		<li class="ct-ann_opt"  >	<span class="green"><a href="{{ path('punnet_editAnnonce', {'id' : a.id } ) }}" alt="" />V</a></span> </li>
 		<li class="ct-ann_opt"  >	<span class="red"><a href="{{ path('punnet_homepage') }}" class="bord_link" alt="" />X</a> </span> </li>
 		<li class="ct-ann_opt"  >	18 vues	  </li>
 		<li class="ct-ann_opt"  >	<span class="green">Actif ! </span> </li>

@@ -82,7 +82,7 @@ class User extends BaseUser
 	{
 		parent::__construct();
 		$this->showphone = 1;
-		$this->avatar    = "no_avatar.jpg";
+		$this->avatar    = "no_avatar.png";
 	}
 	
 	public function upload()

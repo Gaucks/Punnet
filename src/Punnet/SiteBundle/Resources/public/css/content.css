@@ -18,12 +18,15 @@
 	padding: 8px;
 	position: relative;
 	background: #FFF;
+	cursor: pointer;
 }
 
 .annonce_box:hover{
 	background: #333;
 	color: #FFF;
 }
+
+.annonce_box a.ann:hover {text-decoration: none}
 
 .ann_img{
 	float: left;
@@ -45,6 +48,8 @@
 		color: #32a7e0;
 	}
 	
+	.ann_desc li.title:hover,span.ann_request:hover { text-decoration: underline }
+	
 	.ann_desc span.ann_price{
 		position: absolute;
 		bottom: 8px;
@@ -58,7 +63,9 @@
 		background: #c86552;
 	}
 	
-	.ann_desc span.ann_request{
+	.ann_desc span.ann_request{}
+	
+	.ann_desc a.show{
 		position: absolute;
 		width: 80px;
 		bottom: 8px;
@@ -69,7 +76,7 @@
 		-webkit-font-smoothing: antialiased;	
 		font-weight: bold;
 		background: #569db1;
-	}
+}
 
 #pagination{
 	float: left;

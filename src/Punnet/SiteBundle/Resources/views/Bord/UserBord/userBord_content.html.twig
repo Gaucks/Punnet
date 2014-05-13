@@ -6,116 +6,32 @@
 		<div id="pnl_ct_left">
 
 			<h2 class="etape">Vos abonnements :</h2>
+			
+			{% for a in annonces %}
+			<a href="{{ path('punnet_showAnnonce', {'annonce' : a.slug }) }}" alt="" />
 			<div class="box-pnl-ann">
 			
 				<div class="box-pnl-ann-left">
 					<img src="{{ asset('bundles/punnetsite/images/photo.jpg') }}" class="pic" alt="region Avatar" />
-					<h3 class="ann_title">Un annonce d'un truc à vendre</h3>
+					<h3 class="ann_title">{{ a.title }}</h3>
 					<ul class="ann_desc">
-						<li class="desc">Rubrique divers</li>
-						<li class="desc">Le 21/04/14 à 19h23mn</li>
+						<li class="desc">{{ a.categorie.categorie }}</li>
+						<li class="desc">Le {{ a.date|date('d/m/y à h:i') }}</li>
 					</ul>
 				</div>
 				
 				<div class="ann_options">
 					<ul class="options">
-						<li class="option"><span class="ann_price">120 000€</span></li>
-						<li class="option"><span class="ann_request">Interessé</span></li>
+						<li class="option"><span class="ann_price">{% if a.price %} {{ a.price }} € {% else %}Inconnu {% endif %}</span></li>
+						<li class="option"><span class="ann_request"> <a href="{{ path('punnet_showAnnonce', {'annonce' : a.slug }) }}" alt="" class="interested"/>Interessé</a> </span></li>
 					</ul>
 				</div>
 				
 				<div class="clear"></div>
 				
 			</div>
-			
-			<div class="box-pnl-ann">
-			
-				<div class="box-pnl-ann-left">
-					<img src="{{ asset('bundles/punnetsite/images/photo.jpg') }}" class="pic" alt="region Avatar" />
-					<h3 class="ann_title">Un annonce d'un truc à vendre</h3>
-					<ul class="ann_desc">
-						<li class="desc">Rubrique divers</li>
-						<li class="desc">Le 21/04/14 à 19h23mn</li>
-					</ul>
-				</div>
-				
-				<div class="ann_options">
-					<ul class="options">
-						<li class="option"><span class="ann_price">120 000€</span></li>
-						<li class="option"><span class="ann_request">Interessé</span></li>
-					</ul>
-				</div>
-				
-				<div class="clear"></div>
-				
-			</div>
-			
-			<div class="box-pnl-ann">
-			
-				<div class="box-pnl-ann-left">
-					<img src="{{ asset('bundles/punnetsite/images/photo.jpg') }}" class="pic" alt="region Avatar" />
-					<h3 class="ann_title">Un annonce d'un truc à vendre</h3>
-					<ul class="ann_desc">
-						<li class="desc">Rubrique divers</li>
-						<li class="desc">Le 21/04/14 à 19h23mn</li>
-					</ul>
-				</div>
-				
-				<div class="ann_options">
-					<ul class="options">
-						<li class="option"><span class="ann_price">120 000€</span></li>
-						<li class="option"><span class="ann_request">Interessé</span></li>
-					</ul>
-				</div>
-				
-				<div class="clear"></div>
-				
-			</div>
-			
-			<div class="box-pnl-ann">
-			
-				<div class="box-pnl-ann-left">
-					<img src="{{ asset('bundles/punnetsite/images/photo.jpg') }}" class="pic" alt="region Avatar" />
-					<h3 class="ann_title">Un annonce d'un truc à vendre</h3>
-					<ul class="ann_desc">
-						<li class="desc">Rubrique divers</li>
-						<li class="desc">Le 21/04/14 à 19h23mn</li>
-					</ul>
-				</div>
-				
-				<div class="ann_options">
-					<ul class="options">
-						<li class="option"><span class="ann_price">120 000€</span></li>
-						<li class="option"><span class="ann_request">Interessé</span></li>
-					</ul>
-				</div>
-				
-				<div class="clear"></div>
-				
-			</div>
-			
-			<div class="box-pnl-ann">
-			
-				<div class="box-pnl-ann-left">
-					<img src="{{ asset('bundles/punnetsite/images/photo.jpg') }}" class="pic" alt="region Avatar" />
-					<h3 class="ann_title">Un annonce d'un truc à vendre</h3>
-					<ul class="ann_desc">
-						<li class="desc">Rubrique divers</li>
-						<li class="desc">Le 21/04/14 à 19h23mn</li>
-					</ul>
-				</div>
-				
-				<div class="ann_options">
-					<ul class="options">
-						<li class="option"><span class="ann_price">120 000€</span></li>
-						<li class="option"><span class="ann_request">Interessé</span></li>
-					</ul>
-				</div>
-				
-				<div class="clear"></div>
-				
-			</div>
-
+		</a>
+			{% endfor %}
 		
 		</div>	
 		

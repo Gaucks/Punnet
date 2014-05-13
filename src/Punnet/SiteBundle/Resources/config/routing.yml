@@ -7,16 +7,20 @@ punnet_comingsoon:
     defaults: { _controller: PunnetSiteBundle:Site:comingSoon }
 
 punnet_showAnnonce:
-    pattern:  /show-annonce
+    pattern:  /show-annonce/{annonce}
     defaults: { _controller: PunnetSiteBundle:Site:showAnnonce }
 
 punnet_showRegion:
-    pattern:  /show-region
+    pattern:  /show-region/{region}
     defaults: { _controller: PunnetSiteBundle:Site:showRegion }
 
 punnet_showUser:
     pattern:  /show-user
     defaults: { _controller: PunnetSiteBundle:Site:showUser }
+
+punnet_showAllUserAnnonce:
+    pattern:  /show-user-annonce/{user}
+    defaults: { _controller: PunnetSiteBundle:site:showAllUserAnnonce }
 
 punnet_showUserBord:
     pattern:  /bord

@@ -161,6 +161,10 @@ class LoadCategorieData extends AbstractFixture implements OrderedFixtureInterfa
 		$manager->persist($divers);
 				
 		$manager->flush();
+		
+		 $this->addReference('categorie-1', $informatique);
+		
+		
 	}	
 			
 	

@@ -15,12 +15,12 @@
 		<h2>Selectionnez une région:</h2>
 		<ul class="region">
 			{% for r in regions %}
-			<li class="region"><a href="{{ path('punnet_homepage') }}" alt="" class="acc"/>- {{ r.region }}</a></li>
+			<li class="region"><a href="{{ path('punnet_showRegion', {'region' : r.slug }) }}" alt="" class="acc"/>- {{ r.region }}</a></li>
 			{% endfor %}
 			
 			<div class="clear"></div>
 		</ul>
-	<a href="{{ path('punnet_showRegion') }}" alt="" /><input type="button" value="Toutes les régions" ></a>
+	<a href="{{ path('punnet_showRegion', {'region' : 'all' }) }}" alt="" /><input type="button" value="Toutes les régions" ></a>
 	</div>
 	
 	<div id="acc_box_right">
