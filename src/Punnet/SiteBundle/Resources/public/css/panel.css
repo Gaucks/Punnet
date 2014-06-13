@@ -66,10 +66,21 @@ div.ann_options{
 	margin-right: 10px;
 }
 
+.box-pnl-ann-left img.pic_owner{
+	width: 20px;
+	height: 20px;
+	border-radius: 8px; 
+	margin-bottom: -5px;
+	margin-right: 5px;
+}
+
 .box-pnl-ann-left h3.ann_title{  }
 .box-pnl-ann-left h3.ann_title:hover{ text-decoration: underline }
 
 .box-pnl-ann-left ul.ann_desc{ float: left; }
+
+div#seemore{ text-align: center; color: grey; padding: 2px; font-size: 0.9em; }
+div#seemore:hover{ background: #e1e8ed; cursor: pointer;}
 
 .ann_options li.option{ margin-bottom: 5px;}
 

@@ -7,16 +7,20 @@
 
 			<h2 class="etape">Vos abonnements :</h2>
 			
+			{% if annonces %}
 			{% for a in annonces %}
 			<a href="{{ path('punnet_showAnnonce', {'annonce' : a.slug }) }}" alt="" />
 			<div class="box-pnl-ann">
 			
 				<div class="box-pnl-ann-left">
-					<img src="{{ asset('bundles/punnetsite/images/photo.jpg') }}" class="pic" alt="region Avatar" />
-					<h3 class="ann_title">{{ a.title }}</h3>
+					 <img src="{{ asset('bundles/uploads/img/') }}{{ a.image }}" class="pic" alt="Annonce image" />
+					<h3 class="ann_title">
+					<img src="{{ asset('bundles/uploads/avatar/') }}{{ a.user.avatar  }}" class="pic_owner" alt="{{ a.user.username }}" />
+					{{ a.title }}</h3>
 					<ul class="ann_desc">
 						<li class="desc">{{ a.categorie.categorie }}</li>
-						<li class="desc">Le {{ a.date|date('d/m/y à h:i') }}</li>
+						<li class="desc">
+							Le {{ a.date|date('d/m/y à h:i') }}</li>
 					</ul>
 				</div>
 				
@@ -32,7 +36,14 @@
 			</div>
 		</a>
 			{% endfor %}
-		
+			{% endif %}
+			
+			<div id="seemore">
+				<span>
+				{% if annonces is empty %} Vous n'avez ni abonnement ni annnonce, il est temps de s'y mettre ! {% else %} Afficher plus d'annonces ... {% endif %}
+				</span>
+			</div>
+			
 		</div>	
 		
 		<div id="box-pnl-stats">

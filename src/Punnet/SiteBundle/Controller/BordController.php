@@ -18,12 +18,11 @@ class BordController extends Controller
     		return $this->redirect($this->generateUrl('fos_user_security_login'));
     	}
     	
-    	$user = $securityContext->getToken()->getUser();
+    	$user = $securityContext->getToken()->getUser(); // L'id de l'utilisateur
     	
     	$em = $this->getDoctrine()->getManager();
     	
-    	$annonces = $em->getRepository('PunnetSiteBundle:Annonce\Annonce')->findBy(array('user' => $user), array('date' => 'DESC'));
-    	
+    	$annonces = $this->getAnnoncesAndFollowed($user, $em);
     	
     	return $this->render('PunnetSiteBundle:Bord:UserBord/UserBord.html.twig', array('annonces' => $annonces ));	
 	}
@@ -127,4 +126,37 @@ class BordController extends Controller
 	    	
 		   return $this->render('PunnetSiteBundle:Depot:annonce.html.twig', array('form'        => $form->createView(), 																				  'add_annonce' => FALSE));
     }
+	
+	private function getAnnoncesAndFollowed($user, $em)
+	{
+		// Recherche des personnes que l'utilisateur ( $user )  suit
+    	$followers = $em->getRepository('PunnetSiteBundle:Abonnement\UserAbonnement')->findByFollower($user);
+    	$followeds = $em->getRepository('PunnetSiteBundle:Abonnement\RegionAbonnement')->findByUser($user);
+		
+		if($followers != NULL or $followeds != NULL)
+		{	
+			$f = array();
+			$fregion = array();
+			// On récupere uniquement les ID des followeds dans un tableau
+			foreach ($followers as $n )
+			{
+				$f[] = $n->getUser()->getId();
+			}
+			
+			foreach($followeds as $n )
+			{
+				$fregion[] = $n->getRegion()->getId();	
+			}
+			
+			// On mix les résultats des followeds avec celui des utilisateurs
+			$annonces = $em->getRepository('PunnetSiteBundle:Annonce\Annonce')->getFollowed($f, $user, $fregion);
+		}
+		else
+		{	// On affiche que nos annonces.
+    		$annonces  = $em->getRepository('PunnetSiteBundle:Annonce\Annonce')->findBy(array('user' 	 => $user),
+    																			   		array('date' 	 => 'DESC'));
+		}
+		
+		return $annonces;
+	}
 }

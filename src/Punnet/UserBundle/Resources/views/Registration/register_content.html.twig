@@ -12,38 +12,49 @@
 	    <label class="registration">Email</label>
 	    {{ form_widget(form.email) }}
 	    {% if form.email.vars.errors|length > 0 %}
-	   	<div class="checked"><span class="false">Invalide</span></div>
+	   	<div class="checked_Reg"><span class="false">Invalide</span></div>
 	   	{% else  %}
-	   	<div class="checked"><span class="true">Ok!</span></div>
+	   	<div class="checked_Reg"><span class="true">Ok!</span></div>
 	   	{% endif %}
 	    <div class="reg_error">{{ form_errors(form.email) }}</div>
 	    
 	    <label class="registration">Username</label>
 	    {{ form_widget(form.username) }}
 		{% if form.username.vars.errors|length > 0 %}
-	   	<div class="checked"><span class="false">Invalide</span></div>
+	   	<div class="checked_Reg"><span class="false">Invalide</span></div>
 	   	{% else  %}
-	   	<div class="checked"><span class="true">Ok!</span></div>
+	   	<div class="checked_Reg"><span class="true">Ok!</span></div>
 	   	{% endif %}
 	    <div class="reg_error">{{ form_errors(form.username) }}</div>
 	
 	    <label class="registration">Mot de passe</label>
 	    {{ form_widget(form.plainPassword.first) }}
 		{% if form.plainPassword.first.vars.errors|length > 0 %}
-	   	<div class="checked"><span class="false">Invalide</span></div>
+	   	<div class="checked_Reg"><span class="false">Invalide</span></div>
 	   	{% else  %}
-	   	<div class="checked"><span class="true">Ok!</span></div>
+	   	<div class="checked_Reg"><span class="true">Ok!</span></div>
 	   	{% endif %}
 	    <div class="reg_error">{{ form_errors(form.plainPassword.first) }}</div>
 	
 	    <label class="registration">Comfirmation</label>
 	    {{ form_widget(form.plainPassword.second) }}
 		{% if form.plainPassword.first.vars.errors|length > 0 %}
-	   	<div class="checked"><span class="false">Invalide</span></div>
+	   	<div class="checked_Reg"><span class="false">Invalide</span></div>
 	   	{% else  %}
-	   	<div class="checked"><span class="true">Ok!</span></div>
+	   	<div class="checked_Reg"><span class="true">Ok!</span></div>
 	   	{% endif %}
 	    <div class="reg_error">{{ form_errors(form.plainPassword.second) }}</div>
+	    
+	    <label class="registration">Région</label>
+	    {{ form_widget(form.region) }}
+		{% if form.region.vars.errors|length > 0 %}
+	   	<div class="checked_Reg"><span class="false">Invalide</span></div>
+	   	{% else  %}
+	   	<div class="checked_Reg"><span class="true">Ok!</span></div>
+	   	{% endif %}
+	    <div class="reg_error">{{ form_errors(form.region) }}</div>
+	    
+	    
 		
 		{{ form_rest(form) }}
         <input type="submit" value="{{ 'registration.submit'|trans }}" class="sign_sub"/>

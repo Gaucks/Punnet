@@ -65,7 +65,7 @@
     				</li>
     				<li class="login"><a href="{{ path('fos_user_security_logout') }}" alt="" class="" />Déconnexion</a></li>
     				<li class="login">
-    					<a href="{{ path('fos_user_profile_edit') }}" alt="" /><img src="{{ asset('bundles/punnetsite/images/no_avatar.png') }}" id="user_head_avatar" alt="Une image" /></a>
+    					<a href="{{ path('fos_user_profile_edit') }}" alt="" /><img src="{{ asset('bundles/uploads/avatar/')}}{{ app.user.avatar }}" id="user_head_avatar" alt="Une image" /></a>
     				</li>
     				{% else %}
     				<li class="login">
