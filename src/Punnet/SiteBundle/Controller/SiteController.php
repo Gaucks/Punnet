@@ -6,6 +6,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Punnet\SiteBundle\Entity\Annonce\Annonce;
 use Punnet\SiteBundle\Form\Type\Annonce\PunnetAnnonceType;
 use Punnet\SiteBundle\Form\Handler\PunnetAnnonceHandler;
+use Symfony\Component\HttpFoundation\Request;
 
 class SiteController extends Controller
 {
@@ -27,7 +28,15 @@ class SiteController extends Controller
     	}
     	
     	elseif($menutype == "menuregion"){
-	    	return $this->render('PunnetSiteBundle:Menu:menu.html.twig', array('request_region' => $request_region));
+    		
+    		
+    		$em = $this->getDoctrine()->getManager();
+    		$slug = $em->getRepository('PunnetSiteBundle:Region\Region')->findOneByRegion($request_region);
+    		
+    		if(!$slug){ $slug_region = 'toutes-les-regions'; } else { $slug_region = $slug->getSlug(); }
+    		
+	    	return $this->render('PunnetSiteBundle:Menu:menu.html.twig', array('request_region' => $request_region, 
+	    																	   'slug_region' 	=> $slug_region));
     	}
     	
     	else{
@@ -67,7 +76,7 @@ class SiteController extends Controller
     }
     
     // Affiche l'accueil d'une région
-    public function showRegionAction($region)
+    public function showRegionAction(Request $request, $region )
     {
     	$em = $this->getDoctrine()->getManager();	
     	$em_region = $em->getRepository('PunnetSiteBundle:Region\Region');
@@ -75,9 +84,10 @@ class SiteController extends Controller
     	
     	if( $region_exist ){
 	    	
+	    	$query = $request->query->get('order');
 	    	// On récupere les annonces de la régions concerné
-			$annonce = $em->getRepository('PunnetSiteBundle:Annonce\Annonce')->findBy(array('region' => $region_exist->getId()));
-			
+	    	$annonce = $this->getAnnonceOrderBy($region_exist->getId(), $query , $em);
+	    	
 			// On recupere le nom normal de la région
 			$request_region  = $em_region->findOneBySlug($region);
 			$request_region  = $request_region->getRegion();
@@ -119,5 +129,26 @@ class SiteController extends Controller
 																						'menutype'	   	 => 'showAllUserAnnonce',
 																						'request_region' => $user->getUsername(),
 																						'annonce' 	 	 => $user ));	
-	}    
+	}
+    
+    public function getAnnonceOrderBy($region, $order, $em)
+    {
+		if($order == 'dateAsc' or $order == NULL)
+		{
+			$annonce = $em->getRepository('PunnetSiteBundle:Annonce\Annonce')->findBy( array('region' => $region), 
+																					   array('date'   => 'ASC'));
+		}
+		if($order == 'dateDesc')
+		{
+			$annonce = $em->getRepository('PunnetSiteBundle:Annonce\Annonce')->findBy( array('region' => $region), 
+																					   array('date'   => 'DESC'));
+		}
+		if($order == 'priceAsc' ){
+			$annonce = $em->getRepository('PunnetSiteBundle:Annonce\Annonce')->getByPrice($region, 'ASC');
+		}
+		if($order == 'priceDesc' ){
+			$annonce = $em->getRepository('PunnetSiteBundle:Annonce\Annonce')->getByPrice($region, 'DESC');
+		}
+		return $annonce;
+    }    
 }

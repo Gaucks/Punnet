@@ -2,7 +2,6 @@
 
 #usr-annonce{
 	float: left;
-	width: 100%;
 }
 
 #usr-annonce h1#title{
@@ -16,7 +15,7 @@
 	border-bottom: 5px solid #CCC
 }
 
-fieldset#showannonce{ border: 2px solid #DFDFDF; border-bottom: 5px solid #3D3D3D; border-radius: 10px; overflow: hidden }
+fieldset#showannonce{ border: 2px solid #DFDFDF; border-bottom: 5px solid #3D3D3D; border-radius: 10px; overflow: hidden; width: 800px; }
 
 ul.head-ann-top{
 	background: #d1d1d1 url('../../images/bg_menu.gif');
@@ -39,7 +38,7 @@ li.head-ann_id{
 	white-space: nowrap;
 	line-height: 16px;
 	text-shadow: #fff 0 1px 1px;
-	width: 5%;
+	width: 30px;
 }
 
 li.head-ann_voir{
@@ -50,7 +49,7 @@ li.head-ann_voir{
 	white-space: nowrap;
 	line-height: 16px;
 	text-shadow: #fff 0 1px 1px;
-	width: 5%;
+	width: 25px;
 }
 
 li.head-ann_title{
@@ -61,7 +60,7 @@ li.head-ann_title{
 	white-space: nowrap;
 	line-height: 16px;
 	text-shadow: #fff 0 1px 1px;
-	width: 34%;
+	width: 258px;
 }
 
 li.head-ann_date{
@@ -72,7 +71,7 @@ li.head-ann_date{
 	white-space: nowrap;
 	line-height: 16px;
 	text-shadow: #fff 0 1px 1px;
-	width: 9.9%
+	width: 80px;
 }
 
 li.head-ann_opt{
@@ -83,14 +82,14 @@ li.head-ann_opt{
 	white-space: nowrap;
 	line-height: 16px;
 	text-shadow: #fff 0 1px 1px;
-	width: 10%;
+	width: 67px
 }
 
 /* list de contenu */
 
 
-ul.ct_ann{	  display: inline-block; background: #FFF; width: 100%; cursor: pointer; margin-bottom: -5px; text-align: center;}
-ul.ct_ann_grey{	display: inline-block;; background: #eee; width: 100%; cursor: pointer; margin-bottom: -5px; text-align: center;}
+ul.ct_ann{	  display: inline-block; background: #FFF; width: 100%;  margin-bottom: -5px; text-align: center;}
+ul.ct_ann_grey{	display: inline-block;; background: #eee; width: 100%; margin-bottom: -5px; text-align: center;}
 
 
 ul.ct_ann:hover,ul.ct_ann_grey:hover{
@@ -99,11 +98,11 @@ ul.ct_ann:hover,ul.ct_ann_grey:hover{
 }
 
 li.ct-ann_id{
-	width: 5%;
+	width: 25px;
 }
 
 li.ct-ann_voir{
-	width: 5%;
+	width: 25px;
 
 }
 
@@ -111,15 +110,15 @@ li.ct-ann_title{
 	color: #32a7e0;
 	text-align: left;
 	text-indent: 20px;
-	width: 34%;
+	width: 255px;
 }
 
 li.ct-ann_date{
-	width: 9.9%
+	width: 90px;
 }
 
 li.ct-ann_opt{
-	width: 10%;
+	width: 60px;
 }
 
 span.green{ color: green; font-weight: bold; }

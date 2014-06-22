@@ -21,7 +21,6 @@
 	}
 
 #ann_img_box{
-	width: 300px;
 	float: right;
 	text-align: center;
 	margin: 0 20px;
@@ -29,12 +28,12 @@
 }
 #ann_img{
 	border: 5px solid #CCC;
-	width: 300px;
-	height: 300px;
+	max-width: 290px;
+	max-height: 290px;
 	text-align: center;
 }
 
 	#ann_img img#picture{
-		max-width: 300px;
-		max-height: 300px;
+		max-width: 290px;
+		max-height: 290px;
 	}

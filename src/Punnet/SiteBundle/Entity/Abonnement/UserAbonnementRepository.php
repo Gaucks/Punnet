@@ -12,4 +12,13 @@ use Doctrine\ORM\EntityRepository;
  */
 class UserAbonnementRepository extends EntityRepository
 {
+	public function countFollowers($user) // Compte le nombre de personne qui follow l'utilisateur.
+	{
+		return $this->createQueryBuilder('u')
+					->select('count(u.id)')
+					->where('u.user = :user')
+					->setParameter('user' , $user)
+					->getQuery()
+					->getSingleScalarResult();
+	}
 }

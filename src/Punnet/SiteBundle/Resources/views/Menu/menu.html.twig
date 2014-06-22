@@ -8,9 +8,10 @@
 	
 	<div id="region_menu_row">
 			<ul class="row">
-				<li class="row">Trier par date</li>
-				<li class="row">Trier par prix</li>
-				<li class="row">Trier par catégorie</li>
+				<li class="row"><a href="{{ path('punnet_showRegion', { region: slug_region , order: 'dateDesc' }) }}" alt="" />Les plus récentes</a></li>
+				<li class="row"><a href="{{ path('punnet_showRegion', { region: slug_region , order: 'dateAsc' }) }}" alt="" />Les plus anciennes</a></li>
+				<li class="row"><a href="{{ path('punnet_showRegion', { region: slug_region , order: 'priceDesc' }) }}" alt="" />Les moins chères : +</a></li>
+				<li class="row"><a href="{{ path('punnet_showRegion', { region: slug_region, order: 'priceAsc' }) }}" alt="" />Les plus chères : -</a></li>
 			</ul>
 		</div>
 		

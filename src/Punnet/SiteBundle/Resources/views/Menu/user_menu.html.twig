@@ -1,7 +1,9 @@
 <div id="user_menu">
 
 	<div id="user_rep_id">
-		<img src="{{ asset('bundles/uploads/avatar/')}}{{ app.user.avatar }}" class="avatar" alt="User Avatar" />
+		<a href="{{ path('punnet_showUserBord') }}" alt="Accueil du bord" />
+			<img src="{{ asset('bundles/uploads/avatar/')}}{{ app.user.avatar }}" class="avatar" alt="User Avatar" />
+		</a>
 		<h4 id="user_ownername">{{ app.user.username }} </h4>
 		<p class="profil"><a href="{{ path('fos_user_profile_edit') }}" alt="" class="link"/>Modifier mon profil</a></p>
 	</div>

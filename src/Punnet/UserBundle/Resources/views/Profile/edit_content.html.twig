@@ -73,10 +73,9 @@
 								
 								<div class="error">{{ form_errors(form.file) }}</div>
 								<label class="profile_edit">{{ form_label(form.file) }}</label>
-								<div id="avatar_show"><img src="{{ asset('bundles/punnetsite/images/photo.jpg') }}" id="user_avatar" 									alt="User Avatar" />
-								{{ form_widget(form.file) }}</div>
-
-								
+								<div id="avatar_show"><img src="{{ asset('bundles/uploads/avatar/') }}{{ app.user.avatar }}" id="user_avatar" 									alt="User Avatar" />
+								{{ form_widget(form.file) }}
+								</div>
 								
 					</fieldset>
 	    

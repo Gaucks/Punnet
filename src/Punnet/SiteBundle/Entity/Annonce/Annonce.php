@@ -106,18 +106,34 @@ class Annonce
 	*/
 	private $slug;
 	
-	 /**
+	/**
     * @var string
     *
     * @ORM\Column(name="image", nullable=true)
     */
 	private $image;
-
+	
+	/**
+    * @var integer
+    *
+    * @ORM\Column(name="status", type="boolean")
+    */
+	private $status;
+	
+	/**
+    * @var integer
+    *
+    * @ORM\Column(name="enabled", type="boolean")
+    */
+	private $enabled;
+	
 	
 	public function __construct()
 	{
-		$this->date  = new \DateTime();
-		$this->updated  = new \DateTime(); 	
+		$this->enabled    = true;
+		$this->status     = false;
+		$this->date       = new \DateTime();
+		$this->updated    = new \DateTime(); 	
 	}
 	
 	public function ValidTitle(ExecutionContextInterface $context)
@@ -443,5 +459,51 @@ class Annonce
     public function getImage()
     {
         return $this->image;
+    }
+
+    /**
+     * Set status
+     *
+     * @param boolean $status
+     * @return Annonce
+     */
+    public function setStatus($status)
+    {
+        $this->status = $status;
+
+        return $this;
+    }
+
+    /**
+     * Get status
+     *
+     * @return boolean 
+     */
+    public function getStatus()
+    {
+        return $this->status;
+    }
+
+    /**
+     * Set enabled
+     *
+     * @param boolean $enabled
+     * @return Annonce
+     */
+    public function setEnabled($enabled)
+    {
+        $this->enabled = $enabled;
+
+        return $this;
+    }
+
+    /**
+     * Get enabled
+     *
+     * @return boolean 
+     */
+    public function getEnabled()
+    {
+        return $this->enabled;
     }
 }

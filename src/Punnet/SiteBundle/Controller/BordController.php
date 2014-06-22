@@ -22,9 +22,13 @@ class BordController extends Controller
     	
     	$em = $this->getDoctrine()->getManager();
     	
-    	$annonces = $this->getAnnoncesAndFollowed($user, $em);
+    	$annonces 	= $this->getAnnoncesAndFollowed($user, $em);
+    	$nb_abonnes = $em->getRepository('PunnetSiteBundle:Abonnement\UserAbonnement')->countFollowers($user);    	
+    	$nb_sold	= $em->getRepository('PunnetSiteBundle:Annonce\Annonce')->countSold($user);
     	
-    	return $this->render('PunnetSiteBundle:Bord:UserBord/UserBord.html.twig', array('annonces' => $annonces ));	
+    	return $this->render('PunnetSiteBundle:Bord:UserBord/UserBord.html.twig', array('annonces'   => $annonces, 
+    																					'nb_abonnes' => $nb_abonnes,
+    																					'nb_sold' 	 => $nb_sold ));	
 	}
 	
 	// Affiche la page des annonces

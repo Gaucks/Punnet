@@ -11,8 +11,8 @@ punnet_showAnnonce:
     defaults: { _controller: PunnetSiteBundle:Site:showAnnonce }
 
 punnet_showRegion:
-    pattern:  /show-region/{region}
-    defaults: { _controller: PunnetSiteBundle:Site:showRegion }
+    pattern:  /show-region/{region}/{ordre}
+    defaults: { _controller: PunnetSiteBundle:Site:showRegion, region:toutes-les-regions ,ordre: asc }
 
 punnet_showUser:
     pattern:  /show-user

@@ -27,4 +27,31 @@ class AnnonceRepository extends EntityRepository
 		return $query;
 	}
 	
+	public function countSold($id)
+	{
+		$query = $this->createQueryBuilder('a')
+					   ->select('count(a.id)')
+					   ->where('a.status = 1')
+					   ->AndWhere('a.user = :user')
+					   ->setParameter('user', $id)
+					   ->getQuery()
+					   ->getSingleScalarResult();
+					   
+	    return $query;
+	}
+	
+	public function getByPrice($region , $order)
+	{
+		$query = $this->createQueryBuilder('a')
+				->where('a.price != :lol')
+				->AndWhere('a.region = :region')
+				->orderBy('a.price' , $order)
+				->setParameters(array('region' => $region, 'lol' => 'NULL'))
+				->getQuery()
+				->getResult();
+				
+		return $query;
+				
+	}
+	
 }

@@ -26,7 +26,7 @@
 
 
 /* Contenu du panel de gauche */
-#pnl_ct_left_box{ float: left;}
+#pnl_ct_left_box{ float: left; }
 
 #pnl_ct_left{
 	background: #FFF;
@@ -139,16 +139,15 @@ div#seemore:hover{ background: #e1e8ed; cursor: pointer;}
 
 #pnl-statut{
 	border-bottom: 1px solid #DFDFDF;
-	margin-bottom: 5px;
-	padding-bottom: 5px;
-	margin: 0 10px;
+	margin: 10px;
+	margin-bottom: 20px;
 }
 
 #pnl-statut textarea#statut{
 	border: 1px solid #DFDFDF;
-	width: 96%;
-	padding: 10px 10px 0px 10px;
+	width: 100%;
 	font-size: 1em;
+	padding-bottom: 10px;
 }
 
 #pnl-statut input.statut_sub{
@@ -179,9 +178,9 @@ div#seemore:hover{ background: #e1e8ed; cursor: pointer;}
 /* Contenu du wall */
 	.pnl-ct-right-box{
 		border-bottom: 1px solid #ccc;
-		padding: 10px 10px;
 		min-height: 50px;
 		cursor: pointer;
+		margin: 10px;
 	}
 	
 	.pnl-ct-right-box:hover{

@@ -26,7 +26,7 @@
 				
 				<div class="ann_options">
 					<ul class="options">
-						<li class="option"><span class="ann_price">{% if a.price %} {{ a.price }} € {% else %}Inconnu {% endif %}</span></li>
+						<li class="option"><span class="ann_price">{% if a.price %} {{ a.price }} € {% else %} Inconnu {% endif %}</span></li>
 						<li class="option"><span class="ann_request"> <a href="{{ path('punnet_showAnnonce', {'annonce' : a.slug }) }}" alt="" class="interested"/>Interessé</a> </span></li>
 					</ul>
 				</div>
@@ -50,12 +50,12 @@
 				
 				<div class="box-pnl-stat">
 					<h2 class="etape">Vos abonnés :</h2>
-					<h1 class="number">01</h1>
+					<h1 class="number">{{ nb_abonnes }}</h1>
 				</div>
 				
 				<div class="box-pnl-stat">
 					<h2 class="etape">Ventes réussies :</h2>
-					<h1 class="number">02</h1>
+					<h1 class="number">{{ nb_sold }}</h1>
 				</div>
 			
 			</div>
@@ -74,7 +74,6 @@
 					<textarea id="statut" placeholder="Publier un nouveau message..."></textarea>
 					<input type="submit" class="statut_sub" value="Publier" />
 					<span id="carac-max">200 caractères maximum</span>
-					
 				</div>
 			
 			{# FIN DU " Pour ajouter un nouveau message sur sa box " FIN #}

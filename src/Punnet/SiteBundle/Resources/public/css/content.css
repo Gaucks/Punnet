@@ -10,8 +10,9 @@
 
 .annonce_box{
 	border: 1px solid #aaa;
-	height: 90px;
-	width: 400px;
+	height: 80px;
+	width: 46%;
+	max-width: 400px;
 	float: left;
 	margin-right: 10px;
 	margin-bottom: 10px;
@@ -30,17 +31,17 @@
 
 .ann_img{
 	float: left;
-	width: 90px;
-	max-height: 90px;
+	width: 80px;
+	max-height: 80px;
 }
 
 	.ann_img img.ann{
-		width: 90px;
-		height: 90px;
+		width: 80px;
+		height: 80px;
 	}
 
 .ann_desc{
-	margin-left: 100px;
+	margin-left: 90px;
 }
 
 
@@ -58,7 +59,7 @@
 	
 	.ann_desc li.bottom_list{
 		display: inline-block;
-		width: 180px;
+		width: auto;
 		text-align: center;
 		padding: 2px 10px;
 		color: #fff;
